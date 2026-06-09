@@ -1,145 +1,143 @@
+import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
+import XIcon from "@mui/icons-material/X";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import { Link } from "react-router-dom";
-import logo from "../assets/white-logo.png";
-import { InstagramIcon, WhatsappIcon } from "hugeicons-react";
+import { smoothScrollToSection } from "./SmoothScrollToSection";
+import logo from "../assets/logo.png";
+import { Call02Icon, InstagramIcon, WhatsappIcon } from "hugeicons-react";
 import Copyright from "./Copyright";
 
 const Footer = () => {
   return (
     <>
-      <div className="bg-[#245236] w-full px-[5%] py-12 flex flex-wrap gap-10 items-start justify-between">
-        {/* Brand column */}
-        <div className="flex flex-col items-start justify-start w-full sm:w-[42%] lg:w-[26%]">
-          <Link to={"/"} className="mb-5">
-            <img
-              src={logo}
-              className="h-[48px]"
-              alt="Lagos Fruit Basket logo"
-            />
-          </Link>
+      <div className=" bg-[#F5F5F5] h-[50vh] w-[100vw] px-[5%] py-[5%] flex items-center justify-start max-sm:justify-between">
+        <div className=" w-[30%] flex flex-col items-start justify-center mr-[10%]">
+          <div className=" mb-[20px]">
+            <h1 className=" font-semibold text-xl flex items-center justify-center ">
+              <Link to={"/"}>
+                <img src={logo} className=" mr-[10px] h-[48px]" />
+              </Link>
+            </h1>
+          </div>
 
-          <p className="text-[#FFFFFF99] text-[15px] leading-relaxed mb-6">
+          <p className=" text-[#525866] text-[16px] mb-[20px]">
             We carefully handpick the finest fruits in our fruit baskets to
-            ensure they are perfect on delivery.
+            ensure they are perfect on delivery
           </p>
 
-          <div className="flex items-center gap-3">
+          <div className=" w-full flex items-center justify-start">
             <Link
               to={"https://www.instagram.com/lagosfruitbasket/"}
               target="_blank"
-              className="hover:bg-transparent text-[#245236] hover:text-white duration-300 w-[44px] h-[44px] bg-[#89A51B] rounded-full flex items-center justify-center"
-              aria-label="Instagram"
+              className=" hover:bg-transparent text-[#F5F5F5] hover:text-[#3B3B3B] duration-500 w-[48px] h-[48px] bg-[#3B3B3B] rounded-full mr-[10px] flex items-center justify-center"
             >
-              <InstagramIcon size={20} strokeWidth={2} />
+              <InstagramIcon
+                className=""
+                size={22}
+                strokeWidth={2}
+              />
             </Link>
             <Link
               to={"https://wa.me/+2348024015795"}
               target="_blank"
-              className="hover:bg-transparent text-[#245236] hover:text-white duration-300 w-[44px] h-[44px] bg-[#89A51B] rounded-full flex items-center justify-center"
-              aria-label="WhatsApp"
+              className=" hover:bg-transparent text-[#F5F5F5] hover:text-[#3B3B3B] duration-500 w-[48px] h-[48px] bg-[#3B3B3B] rounded-full mr-[10px] flex items-center justify-center"
             >
-              <WhatsappIcon size={20} strokeWidth={2} />
+              <WhatsappIcon
+                className=" "
+                size={22}
+                strokeWidth={2}
+              />
             </Link>
           </div>
         </div>
 
-        {/* Three link columns — wrap into 3-across on mobile, inline on larger */}
-        <div className="w-full sm:w-auto flex flex-row flex-wrap gap-8 sm:gap-10 lg:gap-14">
-          {/* Gallery */}
-          <div className="flex flex-col min-w-[130px]">
-            <h2 className="text-white font-semibold text-[15px] mb-4 tracking-wide">
-              Gallery
-            </h2>
-            <ol className="flex flex-col gap-2">
-              {[
-                { label: "Valentine Baskets", to: "/valentine" },
-                { label: "Christmas Baskets", to: "/christmas" },
-                { label: "Ramadan Baskets", to: "/ramadan" },
-                { label: "Birthday Baskets", to: "/birthday" },
-                { label: "Corporate Baskets", to: "/corporate" },
-              ].map(({ label, to }) => (
-                <li key={to}>
-                  <Link
-                    to={to}
-                    onClick={() => window.scrollTo(0, 0)}
-                    className="text-[#FFFFFF99] text-[14px] font-light hover:text-white hover:underline duration-300"
-                  >
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ol>
-          </div>
+        <div className=" w-[20%] flex flex-col items-start justify-start text-[16px] h-full">
+          <h1 className=" text-[#3B3B3B] font-semibold mb-[20px]">Shop</h1>
+          <ol>
+            <li>
+              <Link
+                to={""}
+                onClick={() =>
+                  document
+                    .getElementById("shop")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+                className=" block hover:underline duration-500 text-[#3B3B3B] font-[300] mb-3"
+              >
+                Valentine Baskets
+              </Link>
+            </li>
+            <li>
+              <Link
+                to={""}
+                onClick={() =>
+                  document
+                    .getElementById("shop")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+                className=" block hover:underline duration-500 text-[#3B3B3B] font-[300] mb-3"
+              >
+                Christmas Baskets
+              </Link>
+            </li>
+            <li>
+              <Link
+                to={""}
+                onClick={() =>
+                  document
+                    .getElementById("shop")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+                className=" block hover:underline duration-500 text-[#3B3B3B] font-[300] mb-3"
+              >
+                Birthday Baskets
+              </Link>
+            </li>
+            <li>
+              <Link
+                to={""}
+                onClick={() =>
+                  document
+                    .getElementById("shop")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+                className=" block hover:underline duration-500 text-[#3B3B3B] font-[300] mb-3"
+              >
+                Corporate Baskets
+              </Link>
+            </li>
+          </ol>
+        </div>
 
-          {/* Links */}
-          <div className="flex flex-col min-w-[100px]">
-            <h2 className="text-white font-semibold text-[15px] mb-4 tracking-wide">
-              Links
-            </h2>
-            <ol className="flex flex-col gap-2">
-              <li>
-                <Link
-                  to={"/#about"}
-                  onClick={() =>
-                    document
-                      .getElementById("about")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="text-[#FFFFFF99] text-[14px] font-light hover:text-white hover:underline duration-300"
-                >
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to={"/#address"}
-                  onClick={() =>
-                    document
-                      .getElementById("address")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="text-[#FFFFFF99] text-[14px] font-light hover:text-white hover:underline duration-300"
-                >
-                  Contact
-                </Link>
-              </li>
-            </ol>
-          </div>
-
-          {/* Policies */}
-          <div className="flex flex-col min-w-[160px]">
-            <h2 className="text-white font-semibold text-[15px] mb-4 tracking-wide">
-              Policies
-            </h2>
-            <ol className="flex flex-col gap-2">
-              <li>
-                <Link
-                  to={"/returnsandrefundspolicy"}
-                  onClick={() => window.scrollTo(0, 0)}
-                  className="text-[#FFFFFF99] text-[14px] font-light hover:text-white hover:underline duration-300"
-                >
-                  Returns & Refunds Policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to={"/shippinganddelivery"}
-                  onClick={() => window.scrollTo(0, 0)}
-                  className="text-[#FFFFFF99] text-[14px] font-light hover:text-white hover:underline duration-300"
-                >
-                  Shipping & Delivery Policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to={"/privacypolicy"}
-                  onClick={() => window.scrollTo(0, 0)}
-                  className="text-[#FFFFFF99] text-[14px] font-light hover:text-white hover:underline duration-300"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
-            </ol>
-          </div>
+        <div className=" w-[20%] flex flex-col items-start justify-start text-[16px] h-full">
+          <h1 className=" text-[#3B3B3B] font-semibold mb-[20px]">Links</h1>
+          <ol>
+            <li className=" text-[#3B3B3B] font-[300] hover:underline duration-500 mb-3">
+              <Link
+                to={""}
+                onClick={() =>
+                  document
+                    .getElementById("about")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+              >
+                About Us
+              </Link>
+            </li>
+            <li className=" text-[#3B3B3B] font-[300] hover:underline duration-500 mb-3">
+              <Link
+                to={""}
+                onClick={() =>
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+              >
+                Contact
+              </Link>
+            </li>
+          </ol>
         </div>
       </div>
       <Copyright />

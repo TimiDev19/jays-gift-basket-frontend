@@ -7,10 +7,12 @@ import Footer from "@/components/Footer";
 import PersonalizeModal from "@/modals/PersonalizeModal";
 import InfiniteCarousel from "@/components/InfiniteCarousel";
 import CompanyLocationSection from "@/components/CompanyLocationSection";
+import Basket from "@/assets/hero-basket.png";
+import FeaturesSlider from "@/components/FeaturesSlider";
 
 const Landingpage = () => {
   const [personaliseOpen, setPersonalizeOpen] = useState(false);
-  
+
   useEffect(() => {
     ScrollReveal().reveal(".reveal-bottom", {
       duration: 1500,
@@ -29,125 +31,89 @@ const Landingpage = () => {
 
   return (
     <div className="h-[100vh] w-[100vw] scroll-smooth overflow-y-scroll">
-      <div
-        id="hero"
-        className=" h-[90vh] max-sm:min-h-[100vh] w-[100vw] flex items-center justify-center pt-[138px]"
-      >
-        <div className=" w-[90%] hidden lg:block relative lg:h-[475px] bg-[#245236] rounded-[40px]">
-          <div className=" absolute w-full h-full flex items-center justify-end rounded-tr-[40px] p-0">
-            <div className=" h-full w-[419px] max-sm:hidden fruit-hero-bg rounded-r-[40px]"></div>
-          </div>
+      <div className="min-h-[90vh] block">
+        <div
+          id="hero"
+          className="min-h-[90vh] overflow-hidden w-screen flex items-center justify-center pt-[138px] relative"
+        >
+          <div className="absolute inset-0 hero-bg"></div>
 
-          <div className=" absolute w-[70%] max-sm:w-full h-full z-[10] flex items-center justify-start max-sm:justify-center pl-[10%]">
-            <div>
-              <h1 className=" text-white text-[60px] lg:font-[400] mb-[10px]">
-                Freshness Delivered <br /> in a{" "}
-                <span className=" text-[#EFF901]">Click!</span>
+          {/* LEFT CONTENT */}
+          <div className="relative z-[6] h-full w-full flex items-center justify-start px-[5%]">
+            <div className="w-[70%]">
+              <h1 className="text-black text-[60px] max-sm:text-[40px] font-[600] leading-[70px] tracking-tight mb-[30px]">
+                Curated Gift Baskets for <br /> Every Special Moment
               </h1>
-              <p className=" text-[16px] text-white font-[300] mb-[10px] w-[70%]">
-                Send more than a gift, send a feeling. From vibrant fruit
-                baskets to fresh juices and creamy parfaits, we hand-pick the
-                best of Nigeria’s harvest and deliver it to your door.
-              </p>
-              <div className=" w-full flex max-sm:flex-col max-sm:items-start items-center justify-start">
-                <Link
-                  to={"/shop"}
-                  className=" max-sm:mb-[20px] px-4 py-1 hover:bg-transparent text-[#245236] duration-500 hover:border hover:border-[#fff] bg-[#EFF901] h-[40px] flex items-center justify-center font-light rounded-full hover:text-white mr-[30px]"
-                >
-                  Shop Now
-                </Link>
 
-                <Link
-                  target="_blank"
-                  to={"https://wa.me/+2348024015795"}
-                  className=" px-4 py-1 bg-transparent hover:bg-[#EFF901] hover:text-[#245236] duration-500 border border-[#fff] hover:border-0 h-[40px] flex items-center justify-center font-light rounded-full text-[#fff] mr-[20px]"
-                >
-                  Chat On Whatsapp
-                </Link>
-              </div>
+              <p className="text-[#666666] text-[18px] mb-[30px]">
+                Handpicked items, beautifully packaged and delivered on time so
+                you can <br /> make every occasion feel effortless and
+                unforgettable.
+              </p>
+
+              <Link
+                to={"/shop"}
+                className="w-[164px] px-4 py-1 hover:bg-transparent text-white duration-500 hover:border hover:border-[#A87F3D] bg-[#A87F3D] h-[48px] flex items-center justify-center font-light rounded-full hover:text-[#A87F3D]"
+              >
+                Shop Now
+              </Link>
             </div>
           </div>
-        </div>
 
-        <div className=" lg:hidden bg-[#245236] py-[20px] pb-[0] px-[8px] rounded-[30px] w-[90%] flex flex-col items-center justify-center">
-          <h1 className=" text-white text-center text-[24px] font-[500] mb-[10px]">
-            Freshness Delivered <br /> in a{" "}
-            <span className=" text-[#EFF901]">Click!</span>
-          </h1>
-
-          <p className=" text-center text-[16px] text-[#FFFFFFCC] leading-loose mb-[20px]">
-            Send more than a gift, send a feeling. From vibrant fruit baskets to
-            fresh juices and creamy parfaits, we hand-pick the best of Nigeria’s
-            harvest and deliver it to your door.
-          </p>
-
-          <div className=" w-full flex max-sm:flex-col max-sm:items-start items-center justify-start mb-[20px]">
-            <Link
-              to={"/shop"}
-              className=" max-sm:mb-[20px] w-full px-4 py-1 hover:bg-transparent text-[#245236] duration-500 hover:border hover:border-[#fff] bg-[#EFF901] h-[40px] flex items-center justify-center font-light rounded-full hover:text-white"
-            >
-              Shop Now
-            </Link>
-
-            <Link
-              target="_blank"
-              to={"https://wa.me/+2348024015795"}
-              className=" px-4 py-1 w-full bg-transparent hover:bg-[#EFF901] hover:text-[#245236] duration-500 border border-[#fff] hover:border-0 h-[40px] flex items-center justify-center font-light rounded-full text-[#fff]"
-            >
-              Chat On Whatsapp
-            </Link>
-          </div>
-
-          <div className="w-full h-[194px] flex items-center justify-end rounded-tr-[40px] p-0">
-            <div className=" h-full w-[194px] fruit-hero-bg rounded-full"></div>
+          {/* RIGHT IMAGE */}
+          <div className="absolute inset-0 z-[5] flex items-end justify-end">
+            <div className="h-full w-[50%] flex items-end justify-end">
+              <img src={Basket} alt="" className="max-h-full object-contain" />
+            </div>
           </div>
         </div>
       </div>
 
+      <FeaturesSlider />
+
       {/* SHOP */}
       <Shop />
 
-      <section
-        id="about"
-        className=" w-full block pt-[150px] mb-[10vh] min-h-[100dvh]"
-      >
+      <section id="about" className=" w-full block pt-[150px] mb-[10vh]">
         <div className=" w-full lg:h-[70vh] flex max-sm:flex-col items-start justify-center max-sm:items-start px-[5%] space-x-[5%]">
           <div className=" max-sm:mb-[10vh] max-sm:w-full max-sm:h-[50vh] w-[40%] h-[70vh] flex items-start justify-center">
             <div className=" w-full h-full about-lfb-bg rounded-3xl"></div>
           </div>
 
           <div className=" w-[50%] max-sm:w-full min-h-[50vh] flex flex-col items-start justify-start">
-            <h1 className=" text-center text-[#245236] text-[32px] mb-[20px]">
+            <h1 className=" text-center text-[#A87F3D] text-[18px] uppercase">
               About Us
             </h1>
-            <p className=" text-[16px] text-[#868C98] font-[300] mb-[20px] leading-[2.3]">
-              Imagine the freshest, seasonal fruits bursting with flavor, all
-              grown right here in Nigeria! At Lagos Fruit Basket, we believe
-              that nature’s candy should be celebrated. We curate these local
-              delights and transform them into stunning, premium fruit
-              arrangements that are as beautiful as they are delicious. <br />
-              Whether you are looking to: <br />
-              Brighten someone’s day with a healthy, vibrant pick-me-up in
-              Lagos. <br />
-              Feature a show stopping centerpiece for your next event or party.{" "}
-              <br />
-              Send a thoughtful, nourishing gift for a special occasion anywhere
-              in Nigeria. <br />
-              We have something designed for everyone. From our signature
-              baskets to our newly launched refreshing juices, crisp salads, and
-              creamy parfaits, we offer a variety of sizes and themes <br />
-              Suitable for gifting, corporate events, personal celebrations, and
-              everything in between our baskets carry not just fruit, but
-              feeling.
+            <h1 className=" capitalize text-[32px] text-[#3B3B3B] font-[600]">
+              where thoughtful gifting meets elegance
+            </h1>
+            <p className=" text-[16px] text-[#868C98] font-[300] mb-[20px] leading-[2.3] montserrat">
+              We specialize in creating beautifully curated gift baskets
+              designed to make every moment feel special. From fresh fruits and
+              gourmet treats to luxury gift packages and custom hampers, every
+              basket is carefully arranged with quality, style, and attention to
+              detail. <br />
+              At Jays Gift Basket, we believe a gift should do more than look
+              good — it should create a memorable experience. Whether you’re
+              celebrating birthdays, anniversaries, graduations, corporate
+              milestones, or simply showing appreciation, we help you deliver
+              meaningful gifts that leave a lasting impression.
             </p>
+
+            {/* <Link
+              to={""}
+              className=" h-[40px] bg-[#A87F3D] flex items-center justify-center px-[30px] text-white rounded-full font-[300]"
+            >
+              Read More
+            </Link> */}
           </div>
         </div>
       </section>
 
-      <div className=" block pt-[150px] mb-[10vh]">
+      <div className=" block  mb-[10vh]">
         <div className=" w-full px-[5%] min-h-[40vh] flex flex-col items-center justify-center">
           <div className=" w-[100%] h-full flex flex-col items-center justify-center max-sm:justify-start max-sm:mb-[30px]">
-            <h1 className=" text-[32px] text-[#245236] mb-[10px] text-center">
+            <h1 className=" text-[32px] text-[#A87F3D] mb-[10px] text-center">
               Trusted by Industry Leaders
             </h1>
 
@@ -157,7 +123,7 @@ const Landingpage = () => {
               Nigeria
             </p>
             <InfiniteCarousel />
-            <h1 className=" text-[24px] text-[#245236]">
+            <h1 className=" text-[24px] text-[#A87F3D]">
               Over <b>2,000</b> Baskets Delivered
             </h1>
           </div>
@@ -168,9 +134,9 @@ const Landingpage = () => {
         <CompanyLocationSection />
       </div>
 
-      <div className=" min-h-[50vh] block pt-[150px] mb-[10vh]">
+      <div id="contact" className=" min-h-[50vh] block pt-[150px] mb-[10vh]">
         <div className=" h-[50vh] w-[100vw] flex items-center justify-center">
-          <div className=" w-[80%] h-full bg-[#245236] rounded-3xl flex flex-col items-center justify-center p-[20px]">
+          <div className=" w-[80%] h-full bg-[#3B3B3B] rounded-3xl flex flex-col items-center justify-center p-[20px]">
             <h1 className=" text-[32px] text-white mb-[20px] text-center">
               Personalize Your Pick!
             </h1>
@@ -182,9 +148,9 @@ const Landingpage = () => {
             </p>
             <button
               onClick={() => setPersonalizeOpen(true)}
-              className=" flex items-center justify-center hover:text-[#eef901] hover:border-[#eef901] hover:bg-transparent hover:border duration-500 text-center bg-[#EFF901] h-[49px] px-[30px] rounded-full text-[14px] text-[#245236] mb-[20px]"
+              className="relative group text-[16px] text-[#fff] duration-500 mb-[20px] hover:bg-transparent h-[48px] flex items-center justify-center bg-[#A87F3D] hover:text-[#A87F3D] hover:font-semibold montserrat rounded-full px-6"
             >
-              Personalize your basket !
+              Chat on WhatsApp
             </button>
           </div>
         </div>

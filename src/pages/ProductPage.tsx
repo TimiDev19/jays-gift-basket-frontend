@@ -3,7 +3,12 @@ import React, { useEffect, useState } from "react";
 import { addToCart } from "@/store/audophileSlice";
 import { useDispatch } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import { ArrowLeft01Icon, ArrowUpLeft01Icon, LinkBackwardIcon, ShoppingBag01Icon } from "hugeicons-react";
+import {
+  ArrowLeft01Icon,
+  ArrowUpLeft01Icon,
+  LinkBackwardIcon,
+  ShoppingBag01Icon,
+} from "hugeicons-react";
 import Footer from "@/components/Footer";
 
 type Product = {
@@ -29,7 +34,7 @@ const ProductPage: React.FC = () => {
     const fetchProducts = async () => {
       try {
         const res = await fetch(
-          "https://lagos-food-basket-backend.onrender.com/user"
+          "https://jays-gift-basket-backend.onrender.com/user"
         );
         const data = await res.json();
 
@@ -47,7 +52,9 @@ const ProductPage: React.FC = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch("https://lagos-food-basket-backend.onrender.com/user");
+        const res = await fetch(
+          "https://jays-gift-basket-backend.onrender.com/user"
+        );
         const data = await res.json();
 
         const productArray = Array.isArray(data) ? data : [];
@@ -59,7 +66,6 @@ const ProductPage: React.FC = () => {
         const randomProducts = shuffled.slice(0, 4);
 
         setRedProducts(randomProducts);
-
       } catch (error) {
         console.error("Fetch error:", error);
         setRedProducts([]);
@@ -95,11 +101,30 @@ const ProductPage: React.FC = () => {
 
   return (
     <>
-      <div className=' lg:h-[90vh] w-[100vw] pt-[150px] px-[5%] flex max-sm:flex-col items-center justify-between'>
+      <div className=" lg:h-[90vh] w-[100vw] pt-[150px] px-[5%] flex max-sm:flex-col items-center justify-between">
         <div className=" max-sm:w-full w-[50%] h-full flex flex-col items-center justify-start max-sm:mb-[20px]">
           <div className=" w-full lg:w-[548px]">
-            <Link to={"/shop"} className=" flex items-center justify-center mb-[20px] h-[36px] w-[36px] bg-[#245236] rounded-full lg:hidden"><ArrowLeft01Icon className=' text-white' size={25} strokeWidth={1.5} /></Link>
-            <Link to={"/shop"} className=" flex items-center justify-center mb-[20px] h-[48px] w-[133px] bg-[#245236] rounded-full text-white max-sm:hidden"><LinkBackwardIcon className=' text-white mr-[5px]' size={25} strokeWidth={1.5} /> Back</Link>
+            <Link
+              to={"/shop"}
+              className=" flex items-center justify-center mb-[20px] h-[36px] w-[36px] bg-[#A87F3D] rounded-full lg:hidden"
+            >
+              <ArrowLeft01Icon
+                className=" text-white"
+                size={25}
+                strokeWidth={1.5}
+              />
+            </Link>
+            <Link
+              to={"/shop"}
+              className=" flex items-center justify-center mb-[20px] h-[48px] w-[133px] bg-[#A87F3D] rounded-full text-white max-sm:hidden"
+            >
+              <LinkBackwardIcon
+                className=" text-white mr-[5px]"
+                size={25}
+                strokeWidth={1.5}
+              />{" "}
+              Back
+            </Link>
           </div>
           <div className="w-full lg:w-[548px] lg:h-[393px] overflow-hidden mb-[10px]">
             <img
@@ -143,13 +168,19 @@ const ProductPage: React.FC = () => {
           </div>
         </div>
         <div className=" max-sm:w-full w-[50%] h-full flex flex-col items-start justify-start max-sm:mb-[40px]">
-          <h1 className=" w-full max-sm:text-[24px] text-[32px] mb-[10px] font-[500]">{product.name}</h1>
-          <p className=" text-[14px] max-sm:text-[16px] font-[200] tracking-wide text-[#868C98] w-[90%] mb-[10px]">{product.description}</p>
-          <h1 className=" text-[24px] text-[#245236] lg:font-semibold">₦{product.price.toLocaleString()}</h1>
+          <h1 className=" w-full max-sm:text-[24px] text-[32px] mb-[10px] font-[500]">
+            {product.name}
+          </h1>
+          <p className=" text-[14px] max-sm:text-[16px] font-[200] tracking-wide text-[#868C98] w-[90%] mb-[10px]">
+            {product.description}
+          </p>
+          <h1 className=" text-[24px] text-[#A87F3D] lg:font-semibold">
+            ₦{product.price.toLocaleString()}
+          </h1>
 
           <button
             onClick={handleAddToCart}
-            className=' max-sm:w-full h-[49px] flex items-center justify-center mt-5 px-11 text-center bg-[#245236] rounded-full text-white text-s py-4 uppercase duration-500 hover:bg-transparent hover:border hover:border-[#245236] hover:text-[#245236] cursor-pointer'
+            className=" max-sm:w-full h-[49px] flex items-center justify-center mt-5 px-11 text-center bg-[#A87F3D] rounded-full text-white text-s py-4 uppercase duration-500 hover:bg-transparent hover:border hover:border-[#A87F3D] hover:text-[#A87F3D] cursor-pointer"
           >
             + Add to cart
           </button>
@@ -160,7 +191,7 @@ const ProductPage: React.FC = () => {
           <h1 className=" text-[28px] text-[#0A0D14]">SHOP</h1>
           <Link
             to={"/shop"}
-            className=" text-[14px] text-[#245236] font-semibold"
+            className=" text-[14px] text-[#A87F3D] font-semibold"
           >
             View more
           </Link>
@@ -169,7 +200,6 @@ const ProductPage: React.FC = () => {
         <div className=" w-full grid grid-cols-2 lg:grid-cols-4">
           {redproducts.map((product) => (
             <div key={product._id} className=" max-w-[40vw] lg:max-w-[20vw]">
-
               <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] overflow-hidden mb-[10px]">
                 <img
                   src={product.avatar}
@@ -183,12 +213,23 @@ const ProductPage: React.FC = () => {
                   <Link
                     to={`/product/${product._id}`}
                     className=" text-[14px] lg:text-[16px] font-[500] text-black hover:underline duration-700 ease-in-out cursor-pointer"
-                  >{product.name}</Link>
-                  <h1 className=" text-black font-[600] text-[18px] lg:text-[28px]">₦{product.price.toLocaleString()}</h1>
+                  >
+                    {product.name}
+                  </Link>
+                  <h1 className=" text-black font-[600] text-[18px] lg:text-[28px]">
+                    ₦{product.price}
+                  </h1>
                 </div>
 
-                <div onClick={() => handleAddToCart} className=" cursor-pointer h-[24px] lg:h-[42px] w-[24px] lg:w-[42px] bg-[#245236] rounded-full flex items-center justify-center">
-                  <ShoppingBag01Icon className=' text-[#EFF901]' size={22} strokeWidth={1.5} />
+                <div
+                  onClick={() => handleAddToCart}
+                  className=" cursor-pointer h-[24px] lg:h-[42px] w-[24px] lg:w-[42px] bg-[#A87F3D] rounded-full flex items-center justify-center"
+                >
+                  <ShoppingBag01Icon
+                    className=" text-[#fff]"
+                    size={22}
+                    strokeWidth={1.5}
+                  />
                 </div>
               </div>
             </div>
@@ -201,3 +242,7 @@ const ProductPage: React.FC = () => {
 };
 
 export default ProductPage;
+
+{
+  /*  */
+}

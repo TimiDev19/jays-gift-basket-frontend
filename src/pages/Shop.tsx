@@ -20,13 +20,14 @@ const Shop = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         setIsLoading(true);
 
         const res = await fetch(
-          "https://lagos-food-basket-backend.onrender.com/user"
+          "https://jays-gift-basket-backend.onrender.com/user"
         );
 
         const data = await res.json();
@@ -67,11 +68,17 @@ const Shop = () => {
       >
         <div className=" w-full flex items-center justify-center mb-[5vh]">
           <h1 className=" text-[28px] text-[#0A0D14]">SHOP</h1>
+          {/* <Link
+                    to={""}
+                    className=" text-[14px] text-[#A87F3D] font-semibold"
+                >
+                    View all
+                </Link> */}
         </div>
 
         {isLoading ? (
           <div className=" w-full grid grid-cols-2 lg:grid-cols-4">
-            <div className=" max-w-[40vw] lg:max-w-[20vw] bg-[#245236]/50 animate-pulse mb-[10px]">
+            <div className=" max-w-[40vw] lg:max-w-[20vw] bg-[#A87F3D]/50 animate-pulse">
               <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
                 <Link to={`#`} className=" cursor-pointer">
                   <div className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer bg-transparent"></div>
@@ -90,10 +97,21 @@ const Shop = () => {
                     ₦product.price
                   </h1>
                 </div>
+
+                {/* <div
+                  onClick={() => handleAddToCart(product)}
+                  className=" cursor-pointer h-[24px] lg:h-[42px] w-[24px] lg:w-[42px] bg-[#A87F3D] rounded-full flex items-center justify-center"
+                >
+                  <ShoppingBag01Icon
+                    className=" text-[#EFF901]"
+                    size={22}
+                    strokeWidth={1.5}
+                  />
+                </div> */}
               </div>
             </div>
 
-            <div className=" max-w-[40vw] lg:max-w-[20vw] bg-[#245236]/50 animate-pulse mb-[10px]">
+            <div className=" max-w-[40vw] lg:max-w-[20vw] bg-[#A87F3D]/50 animate-pulse">
               <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
                 <Link to={`#`} className=" cursor-pointer">
                   <div className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer bg-transparent"></div>
@@ -112,10 +130,21 @@ const Shop = () => {
                     ₦product.price.toLocaleString()
                   </h1>
                 </div>
+
+                {/* <div
+                  onClick={() => handleAddToCart(product)}
+                  className=" cursor-pointer h-[24px] lg:h-[42px] w-[24px] lg:w-[42px] bg-[#A87F3D] rounded-full flex items-center justify-center"
+                >
+                  <ShoppingBag01Icon
+                    className=" text-[#EFF901]"
+                    size={22}
+                    strokeWidth={1.5}
+                  />
+                </div> */}
               </div>
             </div>
 
-            <div className=" max-w-[40vw] lg:max-w-[20vw] bg-[#245236]/50 animate-pulse mb-[10px]">
+            <div className=" max-w-[40vw] lg:max-w-[20vw] bg-[#A87F3D]/50 animate-pulse">
               <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
                 <Link to={`#`} className=" cursor-pointer">
                   <div className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer bg-transparent"></div>
@@ -134,10 +163,21 @@ const Shop = () => {
                     ₦product.price.toLocaleString()
                   </h1>
                 </div>
+
+                {/* <div
+                  onClick={() => handleAddToCart(product)}
+                  className=" cursor-pointer h-[24px] lg:h-[42px] w-[24px] lg:w-[42px] bg-[#A87F3D] rounded-full flex items-center justify-center"
+                >
+                  <ShoppingBag01Icon
+                    className=" text-[#EFF901]"
+                    size={22}
+                    strokeWidth={1.5}
+                  />
+                </div> */}
               </div>
             </div>
 
-            <div className=" max-w-[40vw] lg:max-w-[20vw] bg-[#245236]/50 animate-pulse mb-[10px]">
+            <div className=" max-w-[40vw] lg:max-w-[20vw] bg-[#A87F3D]/50 animate-pulse">
               <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
                 <Link to={`#`} className=" cursor-pointer">
                   <div className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer bg-transparent"></div>
@@ -156,6 +196,17 @@ const Shop = () => {
                     ₦product.price.toLocaleString()
                   </h1>
                 </div>
+
+                {/* <div
+                  onClick={() => handleAddToCart(product)}
+                  className=" cursor-pointer h-[24px] lg:h-[42px] w-[24px] lg:w-[42px] bg-[#A87F3D] rounded-full flex items-center justify-center"
+                >
+                  <ShoppingBag01Icon
+                    className=" text-[#EFF901]"
+                    size={22}
+                    strokeWidth={1.5}
+                  />
+                </div> */}
               </div>
             </div>
           </div>
@@ -175,6 +226,17 @@ const Shop = () => {
                       src={product.avatar}
                       alt={product.name}
                       className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer rounded-t-xl"
+                      // onClick={() => {
+                      //     const params = new URLSearchParams({
+                      //         _id: product._id,
+                      //         name: product.name,
+                      //         description: product.description,
+                      //         price: product.price.toString(),
+                      //         avatar: product.avatar,
+                      //     });
+
+                      //     router.push(`/shop/${product._id}?${params}`)
+                      // }}
                     />
                   </Link>
                 </div>
@@ -188,7 +250,7 @@ const Shop = () => {
                       {product.name}
                     </Link>
 
-                    <p className=" line-clamp-2 text-[#245236B2] text-[12px] mb-2">
+                    <p className=" line-clamp-2 text-[#A87F3DB2] text-[12px] mb-2">
                       {product.description}
                     </p>
 
@@ -198,12 +260,32 @@ const Shop = () => {
 
                     <div
                       onClick={() => handleAddToCart(product)}
-                      className=" cursor-pointer h-[24px] lg:h-[42px] hover:bg-transparent text-[#fff] w-full hover:text-[#245236] duration-500 bg-[#245236] rounded-xl flex text-[14px] font-[300] items-center justify-center"
+                      className=" cursor-pointer h-[24px] lg:h-[42px] hover:bg-transparent text-[#fff] w-full hover:text-[#A87F3D] duration-500 bg-[#A87F3D] rounded-xl flex text-[14px] font-[300] items-center justify-center"
                     >
+                      {/* <ShoppingBag01Icon
+                    className=" "
+                    size={22}
+                    strokeWidth={1.5}
+                  /> */}
                       Add To Cart
                     </div>
                   </div>
+
+                  {/* <div
+                onClick={() => handleAddToCart(product)}
+                className=" cursor-pointer h-[24px] lg:h-[42px] hover:bg-transparent w-[24px] text-[#EFF901] hover:text-[#A87F3D] duration-500 lg:w-[42px] bg-[#A87F3D] rounded-full flex items-center justify-center"
+              >
+                <ShoppingBag01Icon
+                  className=" "
+                  size={22}
+                  strokeWidth={1.5}
+                />
+              </div> */}
                 </div>
+
+                {/* <h2 className="mt-2 font-semibold">{product.name}</h2>
+            <p className="text-sm">{product.description}</p>
+            <p className="font-bold">₦{product.price}</p> */}
               </div>
             ))}
           </div>

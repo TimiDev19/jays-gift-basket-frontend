@@ -42,7 +42,7 @@ export default function SearchModal() {
           abortRef.current = controller;
 
           const res = await fetch(
-            `https://lagos-food-basket-backend.onrender.com/user?search=${encodeURIComponent(
+            `https://jays-gift-basket-backend.onrender.com/user?search=${encodeURIComponent(
               query.trim()
             )}`,
             { signal: controller.signal }

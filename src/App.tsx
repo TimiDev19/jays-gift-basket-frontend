@@ -24,7 +24,7 @@ import OrderProcessing from "./pages/OrderProcessing";
 
 function App() {
   return (
-    <div className=" font-inter scroll-smooth">
+    <div className=" montserrat scroll-smooth">
       <BrowserRouter>
         <ScrollToTop />
         <Navbar />

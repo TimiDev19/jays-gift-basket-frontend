@@ -487,9 +487,9 @@ const CartModal = () => {
 
   const timeToggleBase =
     "flex-1 py-3 text-[0.85rem] font-semibold tracking-wider uppercase border rounded duration-150";
-  const timeToggleActive = "bg-[#245236] text-white border-[#245236]";
+  const timeToggleActive = "bg-[#A87F3D] text-white border-[#A87F3D]";
   const timeToggleInactive =
-    "bg-white text-[#245236] border-[#245236] hover:bg-[#245236]/10";
+    "bg-white text-[#A87F3D] border-[#A87F3D] hover:bg-[#A87F3D]/10";
 
   return (
     <div className="bg-white px-8 py-8 rounded-xl flex flex-col gap-4 max-h-[90dvh] w-full overflow-y-auto">
@@ -497,7 +497,7 @@ const CartModal = () => {
         <button
           onClick={() => dispatch(toggleCart(false))}
           aria-label="Close cart"
-          className="text-[#245236] hover:opacity-60 duration-150 text-[1.4rem] leading-none font-light"
+          className="text-[#A87F3D] hover:opacity-60 duration-150 text-[1.4rem] leading-none font-light"
         >
           ✕
         </button>
@@ -515,7 +515,7 @@ const CartModal = () => {
         </div>
       </div>
 
-      <div className="border-b border-[#245236] pb-4">
+      <div className="border-b border-[#A87F3D] pb-4">
         {cart.length === 0 ? (
           <p className="mt-4 font-semibold italic">No Items In Cart 🤧</p>
         ) : (
@@ -565,13 +565,13 @@ const CartModal = () => {
       {fulfillmentType === "delivery" && selectedLocation && (
         <div className="flex justify-between items-center -mt-2">
           <p className="opacity-50 text-[0.95rem]">DELIVERY</p>
-          <p className="font-semibold text-[1rem] tracking-wider text-[#245236]">
+          <p className="font-semibold text-[1rem] tracking-wider text-[#A87F3D]">
             ₦ {deliveryFee.toFixed(2)}
           </p>
         </div>
       )}
 
-      <div className="flex justify-between items-center border-t border-[#245236] pt-3">
+      <div className="flex justify-between items-center border-t border-[#A87F3D] pt-3">
         <p className="font-semibold text-[1rem]">TOTAL</p>
         <p className="font-bold text-[1.2rem] tracking-wider">
           ₦ {totalCost.toFixed(2)}
@@ -620,8 +620,8 @@ const CartModal = () => {
           className={`flex items-center justify-between w-full py-3 px-4 border rounded duration-150 text-[0.85rem] font-semibold tracking-wider
             ${
               isGift
-                ? "bg-[#245236] text-white border-[#245236]"
-                : "bg-white text-[#245236] border-[#245236] hover:bg-[#245236]/10"
+                ? "bg-[#A87F3D] text-white border-[#A87F3D]"
+                : "bg-white text-[#A87F3D] border-[#A87F3D] hover:bg-[#A87F3D]/10"
             }`}
         >
           <span>🎁 Sending as a Gift?</span>
@@ -632,8 +632,8 @@ const CartModal = () => {
 
         {/* Gift Recipient Fields */}
         {isGift && (
-          <div className="flex flex-col gap-3 bg-[#245236]/5 border border-[#245236]/30 rounded-lg px-4 py-4">
-            <p className="text-[0.78rem] text-[#245236] font-semibold uppercase tracking-wider">
+          <div className="flex flex-col gap-3 bg-[#A87F3D]/5 border border-[#A87F3D]/30 rounded-lg px-4 py-4">
+            <p className="text-[0.78rem] text-[#A87F3D] font-semibold uppercase tracking-wider">
               🎁 Gift Recipient Details
             </p>
             <input
@@ -693,8 +693,8 @@ const CartModal = () => {
             className={`py-3 text-[0.85rem] font-semibold tracking-wider uppercase border rounded duration-150
               ${
                 fulfillmentType === "delivery"
-                  ? "bg-[#245236] text-white border-[#245236]"
-                  : "bg-white text-[#245236] border-[#245236] hover:bg-[#245236]/10"
+                  ? "bg-[#A87F3D] text-white border-[#A87F3D]"
+                  : "bg-white text-[#A87F3D] border-[#A87F3D] hover:bg-[#A87F3D]/10"
               }`}
           >
             🚚 Delivery
@@ -712,8 +712,8 @@ const CartModal = () => {
             className={`py-3 text-[0.85rem] font-semibold tracking-wider uppercase border rounded duration-150
               ${
                 fulfillmentType === "pickup"
-                  ? "bg-[#245236] text-white border-[#245236]"
-                  : "bg-white text-[#245236] border-[#245236] hover:bg-[#245236]/10"
+                  ? "bg-[#A87F3D] text-white border-[#A87F3D]"
+                  : "bg-white text-[#A87F3D] border-[#A87F3D] hover:bg-[#A87F3D]/10"
               }`}
           >
             🏪 Pickup
@@ -725,7 +725,7 @@ const CartModal = () => {
             className={`text-[0.8rem] px-4 py-2 rounded font-bold border ${
               isAfterSameDayCutoff
                 ? "bg-black/10 border-black/40 text-black"
-                : "bg-[#245236]/10 border-[#245236] text-[#245236]"
+                : "bg-[#A87F3D]/10 border-[#A87F3D] text-[#A87F3D]"
             }`}
           >
             {isAfterSameDayCutoff
@@ -822,7 +822,7 @@ const CartModal = () => {
         )}
 
         {fulfillmentType === "pickup" && (
-          <p className="text-[0.85rem] text-[#245236] bg-[#245236]/10 px-4 py-3 rounded">
+          <p className="text-[0.85rem] text-[#A87F3D] bg-[#A87F3D]/10 px-4 py-3 rounded">
             Store Pickup Available <br />
             Prefer to pick up your order? Visit us at 38 Olonode Street, Yaba,
             Lagos. <br /> <br />
@@ -836,14 +836,14 @@ const CartModal = () => {
       {fulfillmentType === "pickup" ? (
         <>
           {isOrdering ? (
-            <button className="bg-[#245236]/50 w-full text-white text-[0.85rem] py-4 px-9 font-semibold tracking-wider uppercase">
+            <button className="bg-[#A87F3D]/50 w-full text-white text-[0.85rem] py-4 px-9 font-semibold tracking-wider uppercase">
               <div className="animate-spin h-5 w-5 mx-auto border-2 border-white rounded-full border-t-transparent"></div>
             </button>
           ) : (
             <Link
               to={"https://wa.me/+2348024015795"}
               target="_blank"
-              className="bg-[#245236] hover:bg-[#245236]/70 w-full text-white text-[0.85rem] duration-150 py-4 px-9 font-semibold tracking-wider uppercase"
+              className="bg-[#A87F3D] hover:bg-[#A87F3D]/70 w-full text-white text-[0.85rem] duration-150 py-4 px-9 font-semibold tracking-wider uppercase"
             >
               Chat With Us on Whatsapp
             </Link>
@@ -852,13 +852,13 @@ const CartModal = () => {
       ) : (
         <>
           {isOrdering ? (
-            <button className="bg-[#245236]/50 w-full text-white text-[0.85rem] py-4 px-9 font-semibold tracking-wider uppercase">
+            <button className="bg-[#A87F3D]/50 w-full text-white text-[0.85rem] py-4 px-9 font-semibold tracking-wider uppercase">
               <div className="animate-spin h-5 w-5 mx-auto border-2 border-white rounded-full border-t-transparent"></div>
             </button>
           ) : (
             <button
               onClick={sendOrder}
-              className="bg-[#245236] hover:bg-[#245236]/70 w-full text-white text-[0.85rem] duration-150 py-4 px-9 font-semibold tracking-wider uppercase"
+              className="bg-[#A87F3D] hover:bg-[#A87F3D]/70 w-full text-white text-[0.85rem] duration-150 py-4 px-9 font-semibold tracking-wider uppercase"
             >
               Checkout
             </button>

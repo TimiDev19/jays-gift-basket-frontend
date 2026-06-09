@@ -34,7 +34,7 @@ body{
 
 .fruit-hero-bg {
   background-image: 
-    url('/images/core4.JPG');
+    url('./assets/bleh-hero.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -48,7 +48,14 @@ body{
 }
 .about-lfb-bg {
   background-image:
-    url('/images/abg.jpg');
+    url('./assets/about.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.about-lfbb-bg {
+  background-image:
+    url('./assets/lower-about.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -95,12 +102,12 @@ body{
 
 .hero-bg {
   background-image: 
-  linear-gradient(
-    rgba(0, 0, 0, 0.7), /* darker at top */
-    rgba(0, 0, 0, 0.3)  /* lighter at bottom */
-  ),
-  url("./assets/hero.jpg");
+  url("./assets/hero-bg.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.montserrat {
+  font-family: 'Montserrat', sans-serif;
 }
