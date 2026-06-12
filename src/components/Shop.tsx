@@ -17,6 +17,7 @@ type Product = {
 
 const Shop = () => {
   const [products, setProducts] = useState<Product[]>([]);
+  const [mobileProducts, setMobileProducts] = useState<Product[]>([]);
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(false);
   const [isFailed, setIsFailed] = useState(false);
@@ -25,22 +26,22 @@ const Shop = () => {
     const fetchProducts = async () => {
       try {
         setIsLoading(true);
-  
+
         const res = await fetch(
           "https://jays-gift-basket-backend.onrender.com/user"
         );
         const data = await res.json();
-  
+
         const productArray = Array.isArray(data) ? data : [];
-  
+
         // Sort by price (cheapest → most expensive)
         const sortedByPrice = [...productArray].sort(
           (a, b) => a.price - b.price
         );
-  
+
         // Take only the 8 cheapest
         const cheapestProducts = sortedByPrice.slice(0, 8);
-  
+
         setProducts(cheapestProducts);
         setIsLoading(false);
       } catch (error) {
@@ -50,7 +51,7 @@ const Shop = () => {
         setIsLoading(false);
       }
     };
-  
+    
     fetchProducts();
   }, []);
 
@@ -206,62 +207,66 @@ const Shop = () => {
           </div>
         </div>
       ) : (
-        <div className=" w-full grid grid-cols-2 lg:grid-cols-4">
-          {products.map((product) => (
-            <div
-              key={product._id}
-              className=" max-w-[40vw] lg:max-w-[20vw] mb-[20px]"
-            >
-              <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
-                <Link
-                  to={`/product/${product._id}`}
-                  className=" cursor-pointer"
-                >
-                  <img
-                    src={product.avatar}
-                    alt={product.name}
-                    className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer rounded-t-xl"
-                    // onClick={() => {
-                    //     const params = new URLSearchParams({
-                    //         _id: product._id,
-                    //         name: product.name,
-                    //         description: product.description,
-                    //         price: product.price.toString(),
-                    //         avatar: product.avatar,
-                    //     });
-
-                    //     router.push(`/shop/${product._id}?${params}`)
-                    // }}
-                  />
-                </Link>
-              </div>
-
-              <div className=" w-full flex items-center justify-between">
-                <div className=" w-full">
+        <>
+          <div className=" w-full grid grid-cols-2 lg:grid-cols-4">
+            {products.map((product) => (
+              <div
+                key={product._id}
+                className=" max-w-[40vw] lg:max-w-[20vw] mb-[20px]"
+              >
+                <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
                   <Link
                     to={`/product/${product._id}`}
-                    className=" text-[16px] lg:text-[22px] font-[400] text-black hover:underline duration-700 ease-in-out cursor-pointer mb-2 block"
+                    className=" cursor-pointer"
                   >
-                    {product.name}
+                    <img
+                      src={product.avatar}
+                      alt={product.name}
+                      className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer rounded-t-xl"
+                      // onClick={() => {
+                      //     const params = new URLSearchParams({
+                      //         _id: product._id,
+                      //         name: product.name,
+                      //         description: product.description,
+                      //         price: product.price.toString(),
+                      //         avatar: product.avatar,
+                      //     });
+
+                      //     router.push(`/shop/${product._id}?${params}`)
+                      // }}
+                    />
                   </Link>
+                </div>
 
-                  <p className=" line-clamp-2 text-[#A87F3D] text-[12px] mb-2">{product.description}</p>
+                <div className=" w-full flex items-center justify-between">
+                  <div className=" w-full">
+                    <Link
+                      to={`/product/${product._id}`}
+                      className=" text-[16px] lg:text-[22px] font-[400] text-black hover:underline duration-700 ease-in-out cursor-pointer mb-2 block"
+                    >
+                      {product.name}
+                    </Link>
 
-                  <h1 className=" text-black font-[400] text-[20px] lg:text-[28px] mb-2">
-                    ₦{product.price.toLocaleString()}
-                  </h1>
+                    <p className=" line-clamp-2 text-[#A87F3D] text-[12px] mb-2">
+                      {product.description}
+                    </p>
 
-                  <div
-                    onClick={() => handleAddToCart(product)}
-                    className=" cursor-pointer h-[24px] lg:h-[42px] hover:bg-transparent text-[#fff] w-full hover:text-[#A87F3D] duration-500 bg-[#A87F3D] rounded-xl flex text-[14px] font-[300] items-center justify-center"
-                  >
-                    Add To Cart
+                    <h1 className=" text-black font-[400] text-[20px] lg:text-[28px] mb-2">
+                      ₦{product.price.toLocaleString()}
+                    </h1>
+
+                    <div
+                      onClick={() => handleAddToCart(product)}
+                      className=" cursor-pointer h-[24px] lg:h-[42px] hover:bg-transparent text-[#fff] w-full hover:text-[#A87F3D] duration-500 bg-[#A87F3D] rounded-xl flex text-[14px] font-[300] items-center justify-center"
+                    >
+                      Add To Cart
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </>
       )}
     </div>
   );

@@ -9,6 +9,10 @@ import InfiniteCarousel from "@/components/InfiniteCarousel";
 import CompanyLocationSection from "@/components/CompanyLocationSection";
 import Basket from "@/assets/hero-basket.png";
 import FeaturesSlider from "@/components/FeaturesSlider";
+import birthday from "@/assets/birthday-gift.png";
+import wedding from "@/assets/wedding-gift.png";
+import coporate from "@/assets/coporate-gift.png";
+import couples from "@/assets/couples-gift.png";
 
 const Landingpage = () => {
   const [personaliseOpen, setPersonalizeOpen] = useState(false);
@@ -70,6 +74,100 @@ const Landingpage = () => {
       </div>
 
       <FeaturesSlider />
+      <div
+        id="categories"
+        className=" w-full min-h-[40vh] px-[2.5%] pt-[150px] mb-[20px]"
+      >
+        <div className=" w-full grid grid-cols-2 lg:grid-cols-4">
+          <div className=" max-w-[40vw] lg:max-w-[20vw] mb-[20px]">
+            <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
+              <Link to={`/birthday`} className=" cursor-pointer">
+                <img
+                  src={birthday}
+                  className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer rounded-xl"
+                />
+              </Link>
+            </div>
+
+            <div className=" w-full flex items-center justify-center">
+              <div className=" w-full flex flex-col items-center justify-center">
+                <Link
+                  to={`/product/`}
+                  className=" line-clamp-2 text-[#000000] text-[20px] mb-2"
+                >
+                  Birthday Baskets
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className=" max-w-[40vw] lg:max-w-[20vw] mb-[20px]">
+            <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
+              <Link to={`/birthday`} className=" cursor-pointer">
+                <img
+                  src={wedding}
+                  className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer rounded-xl"
+                />
+              </Link>
+            </div>
+
+            <div className=" w-full flex items-center justify-center">
+              <div className=" w-full flex flex-col items-center justify-center">
+                <Link
+                  to={`/product/`}
+                  className=" line-clamp-2 text-[#000000] text-[20px] mb-2"
+                >
+                  Wedding Baskets
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className=" max-w-[40vw] lg:max-w-[20vw] mb-[20px]">
+            <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
+              <Link to={`/produc`} className=" cursor-pointer">
+                <img
+                  src={coporate}
+                  className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer rounded-xl"
+                />
+              </Link>
+            </div>
+
+            <div className=" w-full flex items-center justify-center">
+              <div className=" w-full flex flex-col items-center justify-center">
+                <Link
+                  to={`/product/`}
+                  className=" line-clamp-2 text-[#000000] text-[20px] mb-2"
+                >
+                  Corporate Baskets
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className=" max-w-[40vw] lg:max-w-[20vw] mb-[20px]">
+            <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
+              <Link to={`/produc`} className=" cursor-pointer">
+                <img
+                  src={couples}
+                  className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer rounded-xl"
+                />
+              </Link>
+            </div>
+
+            <div className=" w-full flex items-center justify-center">
+              <div className=" w-full flex flex-col items-center justify-center">
+                <Link
+                  to={`/product/`}
+                  className=" line-clamp-2 text-[#000000] text-[20px] mb-2"
+                >
+                  Couples Baskets
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* SHOP */}
       <Shop />
