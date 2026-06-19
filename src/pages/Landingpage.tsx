@@ -92,7 +92,7 @@ const Landingpage = () => {
             <div className=" w-full flex items-center justify-center">
               <div className=" w-full flex flex-col items-center justify-center">
                 <Link
-                  to={`/product/`}
+                  to={`/birthday`}
                   className=" line-clamp-2 text-[#000000] text-[20px] mb-2"
                 >
                   Birthday Baskets
@@ -103,7 +103,7 @@ const Landingpage = () => {
 
           <div className=" max-w-[40vw] lg:max-w-[20vw] mb-[20px]">
             <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
-              <Link to={`/birthday`} className=" cursor-pointer">
+              <Link to={`/wedding`} className=" cursor-pointer">
                 <img
                   src={wedding}
                   className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer rounded-xl"
@@ -114,7 +114,7 @@ const Landingpage = () => {
             <div className=" w-full flex items-center justify-center">
               <div className=" w-full flex flex-col items-center justify-center">
                 <Link
-                  to={`/product/`}
+                  to={`/wedding`}
                   className=" line-clamp-2 text-[#000000] text-[20px] mb-2"
                 >
                   Wedding Baskets
@@ -125,7 +125,7 @@ const Landingpage = () => {
 
           <div className=" max-w-[40vw] lg:max-w-[20vw] mb-[20px]">
             <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
-              <Link to={`/produc`} className=" cursor-pointer">
+              <Link to={`/corporate`} className=" cursor-pointer">
                 <img
                   src={coporate}
                   className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer rounded-xl"
@@ -136,7 +136,7 @@ const Landingpage = () => {
             <div className=" w-full flex items-center justify-center">
               <div className=" w-full flex flex-col items-center justify-center">
                 <Link
-                  to={`/product/`}
+                  to={`/corporate`}
                   className=" line-clamp-2 text-[#000000] text-[20px] mb-2"
                 >
                   Corporate Baskets
@@ -147,7 +147,7 @@ const Landingpage = () => {
 
           <div className=" max-w-[40vw] lg:max-w-[20vw] mb-[20px]">
             <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
-              <Link to={`/produc`} className=" cursor-pointer">
+              <Link to={`/couples`} className=" cursor-pointer">
                 <img
                   src={couples}
                   className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer rounded-xl"
@@ -158,7 +158,7 @@ const Landingpage = () => {
             <div className=" w-full flex items-center justify-center">
               <div className=" w-full flex flex-col items-center justify-center">
                 <Link
-                  to={`/product/`}
+                  to={`/couples`}
                   className=" line-clamp-2 text-[#000000] text-[20px] mb-2"
                 >
                   Couples Baskets

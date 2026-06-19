@@ -39,7 +39,7 @@ const PersonalizeModal = ({
         <Link
           target="_blank"
           to={"https://wa.me/+2348024015795"}
-          className=" flex items-center justify-center text-center hover:bg-transparent duration-500 bg-[#EFF901] h-[49px] px-[30px] rounded-full text-[14px] text-[#245236]"
+          className=" flex items-center justify-center text-center hover:bg-transparent hover:text-[#A87F3D] duration-500 bg-[#A87F3D] h-[49px] px-[30px] rounded-full text-[14px] text-[#fff]"
         >
            Design Yours via WhatsApp
         </Link>

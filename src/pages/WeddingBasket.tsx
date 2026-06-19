@@ -18,7 +18,7 @@ type Product = {
   cloudinary_id: string;
 };
 
-const CorporateBaskets = () => {
+const WeddingBaskets = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [mobileProducts, setMobileProducts] = useState<Product[]>([]);
   const dispatch = useDispatch();
@@ -39,7 +39,7 @@ const CorporateBaskets = () => {
 
         // Filter only products with category "general"
         const generalProducts = productArray.filter(
-          (product) => product.category?.toLowerCase() === "corporate"
+          (product) => product.category?.toLowerCase() === "wedding"
         );
 
         // Sort by price (cheapest → most expensive)
@@ -105,11 +105,11 @@ const CorporateBaskets = () => {
           {/* Hero Section */}
           <section className="px-6 py-14 text-center">
             <h1 className="text-4xl md:text-6xl font-extrabold text-[#A87F3D]">
-              Corporate Basket Shop
+              Wedding Basket Shop
             </h1>
 
             <p className="max-w-2xl mx-auto mt-5 text-gray-600 text-base md:text-lg">
-              Explore our beautiful collection of handcrafted corporate baskets
+              Explore our beautiful collection of handcrafted wedding baskets
               perfect for gifting your loved ones.
             </p>
           </section>
@@ -294,4 +294,4 @@ const CorporateBaskets = () => {
   );
 };
 
-export default CorporateBaskets;
+export default WeddingBaskets;

@@ -11,8 +11,8 @@ import ProductPage from "./pages/ProductPage";
 import StickyButton from "./components/StickyButton";
 import SearchModal from "./modals/SearchModal";
 import ValentineBaskets from "./pages/ValentineBaskets";
-import ChristmasBaskets from "./pages/ChristmasBaskets";
-import RamadanBaskets from "./pages/RamadanBaskets";
+import WeddingBaskets from "./pages/WeddingBasket";
+import RamadanBaskets from "./pages/CouplesBaskets";
 import BirthdayBaskets from "./pages/BirthdayBaskets";
 import CorporateBaskets from "./pages/CorporateBaskets";
 import OrderConfirmed from "./pages/OrderConfirmed";
@@ -21,6 +21,7 @@ import ShippingAndDelivery from "./pages/ShippingAndDelivery";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ScrollToTop from "./components/ScrollToTop";
 import OrderProcessing from "./pages/OrderProcessing";
+import CouplesBaskets from "./pages/CouplesBaskets";
 
 function App() {
   return (
@@ -60,18 +61,18 @@ function App() {
             }
           />
           <Route
-            path="/christmas"
+            path="/wedding"
             element={
               <FadeReveal>
-                <ChristmasBaskets />
+                <WeddingBaskets />
               </FadeReveal>
             }
           />
           <Route
-            path="/ramadan"
+            path="/corporate"
             element={
               <FadeReveal>
-                <RamadanBaskets />
+                <CorporateBaskets />
               </FadeReveal>
             }
           />
@@ -84,10 +85,10 @@ function App() {
             }
           />
           <Route
-            path="/corporate"
+            path="/couples"
             element={
               <FadeReveal>
-                <CorporateBaskets />
+                <CouplesBaskets />
               </FadeReveal>
             }
           />
