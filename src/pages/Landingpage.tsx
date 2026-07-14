@@ -46,13 +46,14 @@ const Landingpage = () => {
           <div className="relative z-[6] h-full w-full flex items-center justify-start px-[5%]">
             <div className="w-[70%]">
               <h1 className="text-black text-[60px] max-sm:text-[40px] font-[600] leading-[70px] tracking-tight mb-[30px]">
-                Curated Gift Baskets for <br /> Every Special Moment
+                You bring the thought. We’ll bring the wow.
               </h1>
 
               <p className="text-[#666666] text-[18px] mb-[30px]">
-                Handpicked items, beautifully packaged and delivered on time so
-                you can <br /> make every occasion feel effortless and
-                unforgettable.
+                Finding the perfect gift shouldn't feel like a full-time job. <br />
+                Jay’s Gift Basket combines artisanal handpicked goods with
+                show-stopping presentation, <br /> delivered straight to their door.
+                You get all the credit, none of the stress.
               </p>
 
               <Link

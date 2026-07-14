@@ -17,6 +17,7 @@ import {
   ShoppingBag01Icon,
 } from "hugeicons-react";
 import { openSearch } from "@/store/searchSlice";
+import NavDropdown from "./NavDropdown";
 
 const Navbar = () => {
   const cartIsShowing = useAppSelector((state) => state.appState.cartIsVisible);
@@ -37,7 +38,7 @@ const Navbar = () => {
             <div className=" flex items-center justify-center">
               <h1 className=" font-semibold text-xl flex items-center justify-center ">
                 <Link to={"/"}>
-                  <img src={logo} className=" mr-[20px]" />
+                  <img src={logo} className=" mr-[20px] h-[65px]" />
                 </Link>
               </h1>
 
@@ -111,18 +112,7 @@ const Navbar = () => {
               <span className="absolute left-1/2 bottom-0 w-0 h-[1px] bg-[#000] transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
             </Link>
 
-            <Link
-              to={"/#shop"}
-              className="relative group text-[16px] text-[#000]"
-              onClick={() =>
-                document
-                  .getElementById("shop")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
-            >
-              Categories
-              <span className="absolute left-1/2 bottom-0 w-0 h-[1px] bg-[#000] transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
-            </Link>
+            <NavDropdown />
 
             <Link
               to={"/#aboutus"}
@@ -137,7 +127,9 @@ const Navbar = () => {
               <span className="absolute left-1/2 bottom-0 w-0 h-[1px] bg-black transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
             </Link>
 
-            <Link
+            
+
+            {/* <Link
               to={"/#contact"}
               className="relative group text-[16px] text-black"
               onClick={() =>
@@ -148,7 +140,7 @@ const Navbar = () => {
             >
               Contact Us
               <span className="absolute left-1/2 bottom-0 w-0 h-[1px] bg-black transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
-            </Link>
+            </Link> */}
 
             {/* SEARCH BAR */}
           </div>
