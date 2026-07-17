@@ -51,8 +51,8 @@ const Landingpage = () => {
 
               <p className="text-[#666666] text-[18px] mb-[30px]">
                 Finding the perfect gift shouldn't feel like a full-time job. <br />
-                Jay’s Gift Basket combines artisanal handpicked goods with
-                show-stopping presentation, <br /> delivered straight to their door.
+                Jay’s Gift Basket combines artisanal handpicked goods with <br />
+                show-stopping presentation, delivered straight to their door. <br />
                 You get all the credit, none of the stress.
               </p>
 
@@ -79,10 +79,10 @@ const Landingpage = () => {
         id="categories"
         className=" w-full min-h-[40vh] px-[2.5%] pt-[150px] mb-[20px]"
       >
-        <div className=" w-full grid grid-cols-2 lg:grid-cols-4">
+        <div className=" w-full mx-auto grid grid-cols-2 lg:grid-cols-3">
           <div className=" max-w-[40vw] lg:max-w-[20vw] mb-[20px]">
             <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
-              <Link to={`/birthday`} className=" cursor-pointer">
+              <Link to={`/shopByRecipient`} className=" cursor-pointer">
                 <img
                   src={birthday}
                   className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer rounded-xl"
@@ -93,10 +93,10 @@ const Landingpage = () => {
             <div className=" w-full flex items-center justify-center">
               <div className=" w-full flex flex-col items-center justify-center">
                 <Link
-                  to={`/birthday`}
+                  to={`/shopByRecipient`}
                   className=" line-clamp-2 text-[#000000] text-[20px] mb-2"
                 >
-                  Birthday Baskets
+                  Shop by Recipient
                 </Link>
               </div>
             </div>
@@ -104,29 +104,7 @@ const Landingpage = () => {
 
           <div className=" max-w-[40vw] lg:max-w-[20vw] mb-[20px]">
             <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
-              <Link to={`/wedding`} className=" cursor-pointer">
-                <img
-                  src={wedding}
-                  className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer rounded-xl"
-                />
-              </Link>
-            </div>
-
-            <div className=" w-full flex items-center justify-center">
-              <div className=" w-full flex flex-col items-center justify-center">
-                <Link
-                  to={`/wedding`}
-                  className=" line-clamp-2 text-[#000000] text-[20px] mb-2"
-                >
-                  Wedding Baskets
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          <div className=" max-w-[40vw] lg:max-w-[20vw] mb-[20px]">
-            <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
-              <Link to={`/corporate`} className=" cursor-pointer">
+              <Link to={`/shopByOccassion`} className=" cursor-pointer">
                 <img
                   src={coporate}
                   className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer rounded-xl"
@@ -137,10 +115,10 @@ const Landingpage = () => {
             <div className=" w-full flex items-center justify-center">
               <div className=" w-full flex flex-col items-center justify-center">
                 <Link
-                  to={`/corporate`}
+                  to={`/shopByOccassion`}
                   className=" line-clamp-2 text-[#000000] text-[20px] mb-2"
                 >
-                  Corporate Baskets
+                  Shop by Occassion
                 </Link>
               </div>
             </div>
@@ -148,7 +126,7 @@ const Landingpage = () => {
 
           <div className=" max-w-[40vw] lg:max-w-[20vw] mb-[20px]">
             <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
-              <Link to={`/couples`} className=" cursor-pointer">
+              <Link to={`/#contact`} className=" cursor-pointer">
                 <img
                   src={couples}
                   className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer rounded-xl"
@@ -159,10 +137,10 @@ const Landingpage = () => {
             <div className=" w-full flex items-center justify-center">
               <div className=" w-full flex flex-col items-center justify-center">
                 <Link
-                  to={`/couples`}
+                  to={`/#contact`}
                   className=" line-clamp-2 text-[#000000] text-[20px] mb-2"
                 >
-                  Couples Baskets
+                  Build you Own Box
                 </Link>
               </div>
             </div>

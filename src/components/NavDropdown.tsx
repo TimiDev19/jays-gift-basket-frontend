@@ -29,9 +29,9 @@ export interface NavDropdownProps {
 export default function NavDropdown({
   label = "Categories",
   items = [
-    { label: "Overview", href: "/#shop" },
-    { label: "Features", href: "#" },
-    { label: "Pricing", href: "#" },
+    { label: "Shop by Recipient", href: "/shopByRecipient" },
+    { label: "Shop by Occasion", href: "/shopByOccassion" },
+    { label: "Build Your Own Box", href: "/#contact" },
   ],
 }: NavDropdownProps) {
   const [open, setOpen] = useState<boolean>(false);

@@ -18,67 +18,66 @@ type Product = {
   cloudinary_id: string;
 };
 
-const BirthdayBaskets = () => {
+const ForHer = () => {
   const [products, setProducts] = useState<Product[]>([]);
-  const [mobileProducts, setMobileProducts] = useState<Product[]>([]);
-  const dispatch = useDispatch();
-  const [isLoading, setIsLoading] = useState(false);
-  const [isFailed, setIsFailed] = useState(false);
+const [mobileProducts, setMobileProducts] = useState<Product[]>([]);
+const dispatch = useDispatch();
+const [isLoading, setIsLoading] = useState(false);
+const [isFailed, setIsFailed] = useState(false);
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        setIsLoading(true);
+useEffect(() => {
+  const fetchProducts = async () => {
+    try {
+      setIsLoading(true);
 
-        const res = await fetch(
-          "https://jays-gift-basket-backend.onrender.com/user"
-        );
-        const data = await res.json();
+      const res = await fetch(
+        "https://jays-gift-basket-backend.onrender.com/user"
+      );
+      const data = await res.json();
 
-        const productArray = Array.isArray(data) ? data : [];
+      const productArray = Array.isArray(data) ? data : [];
 
-        // Filter only products with category "general"
-        const generalProducts = productArray.filter(
-          (product) => product.category?.toLowerCase() === "birthday"
-        );
+      // Filter only products with category "general"
+      const generalProducts = productArray.filter(
+        (product) => product.category?.toLowerCase() === "for_her"
+      );
 
-        // Sort by price (cheapest → most expensive)
-        const sortedByPrice = [...generalProducts].sort(
-          (a, b) => a.price - b.price
-        );
+      // Sort by price (cheapest → most expensive)
+      const sortedByPrice = [...generalProducts].sort(
+        (a, b) => a.price - b.price
+      );
 
-        setProducts(sortedByPrice);
-        setIsLoading(false);
-      } catch (error) {
-        console.error("Fetch error:", error);
-        setProducts([]);
-        setIsFailed(true);
-        setIsLoading(false);
-      }
-    };
-
-    fetchProducts();
-  }, []);
-
-  const handleAddToCart = (product: Product) => {
-    const CartItem = {
-      id: product._id,
-      img: product.avatar,
-      name: product.name,
-      price: product.price,
-      quantity: 1,
-    };
-
-    dispatch(addToCart(CartItem));
+      setProducts(sortedByPrice);
+      setIsLoading(false);
+    } catch (error) {
+      console.error("Fetch error:", error);
+      setProducts([]);
+      setIsFailed(true);
+      setIsLoading(false);
+    }
   };
 
+  fetchProducts();
+}, []);
+
+const handleAddToCart = (product: Product) => {
+  const CartItem = {
+    id: product._id,
+    img: product.avatar,
+    name: product.name,
+    price: product.price,
+    quantity: 1,
+  };
+
+  dispatch(addToCart(CartItem));
+};
+
+
   return (
-    <>
+    <div>
       <div className="min-h-[100dvh] bg-white pt-[150px]">
         {/* Gallery */}
-        <div
-          className=" w-full min-h-[40vh] px-[2.5%] mb-[20px]"
-        >
+        <div className=" w-full min-h-[40vh] px-[2.5%] mb-[20px]">
           <div className=" w-full lg:w-[548px] px-[5%]">
             <Link
               to={"/"}
@@ -105,12 +104,11 @@ const BirthdayBaskets = () => {
           {/* Hero Section */}
           <section className="px-6 py-14 text-center">
             <h1 className="text-4xl md:text-6xl font-extrabold text-[#A87F3D]">
-              Birthday Basket Shop
+             Shop For Her
             </h1>
 
             <p className="max-w-2xl mx-auto mt-5 text-gray-600 text-base md:text-lg">
-              Explore our beautiful collection of handcrafted birthday baskets
-              perfect for gifting your loved ones.
+              Explore our beautiful collection of handcrafted baskets for her.
             </p>
           </section>
           {isLoading ? (
@@ -290,8 +288,8 @@ const BirthdayBaskets = () => {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 
-export default BirthdayBaskets;
+export default ForHer;
