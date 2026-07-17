@@ -84,7 +84,7 @@ const Landingpage = () => {
             <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
               <Link to={`/shopByRecipient`} className=" cursor-pointer">
                 <img
-                  src={birthday}
+                  src={couples}
                   className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer rounded-xl"
                 />
               </Link>
@@ -106,7 +106,7 @@ const Landingpage = () => {
             <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
               <Link to={`/shopByOccassion`} className=" cursor-pointer">
                 <img
-                  src={coporate}
+                  src={birthday}
                   className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer rounded-xl"
                 />
               </Link>
@@ -128,7 +128,7 @@ const Landingpage = () => {
             <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
               <Link to={`/#contact`} className=" cursor-pointer">
                 <img
-                  src={couples}
+                  src={coporate}
                   className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer rounded-xl"
                 />
               </Link>
