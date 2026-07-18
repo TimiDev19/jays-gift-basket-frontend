@@ -5,6 +5,13 @@ import birthday from "@/assets/birthday-gift.png";
 import wedding from "@/assets/wedding-gift.png";
 import coporate from "@/assets/coporate-gift.png";
 import couples from "@/assets/couples-gift.png";
+import christmas from "@/assets/christmas.jpeg";
+import new_year from "@/assets/new-year.jpeg";
+import mothersday from "@/assets/mothersday.jpeg";
+import fathersday from "@/assets/fathersday.jpeg";
+import newbaby from "@/assets/newbaby.jpeg";
+import sympathy from "@/assets/sympathy.jpeg";
+import cuz from "@/assets/cuz.jpeg"
 
 const ShopByOccasion = () => {
   return (
@@ -50,7 +57,7 @@ const ShopByOccasion = () => {
             <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
               <Link to={`/christmas`} className=" cursor-pointer">
                 <img
-                  src={birthday}
+                  src={christmas}
                   className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer rounded-xl"
                 />
               </Link>
@@ -72,7 +79,7 @@ const ShopByOccasion = () => {
             <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
               <Link to={`/newyear`} className=" cursor-pointer">
                 <img
-                  src={coporate}
+                  src={new_year}
                   className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer rounded-xl"
                 />
               </Link>
@@ -116,7 +123,7 @@ const ShopByOccasion = () => {
             <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
               <Link to={`/mothersday`} className=" cursor-pointer">
                 <img
-                  src={couples}
+                  src={mothersday}
                   className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer rounded-xl"
                 />
               </Link>
@@ -138,7 +145,7 @@ const ShopByOccasion = () => {
             <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
               <Link to={`/fathersday`} className=" cursor-pointer">
                 <img
-                  src={couples}
+                  src={fathersday}
                   className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer rounded-xl"
                 />
               </Link>
@@ -182,7 +189,7 @@ const ShopByOccasion = () => {
             <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
               <Link to={`/newbabywelcomes`} className=" cursor-pointer">
                 <img
-                  src={birthday}
+                  src={newbaby}
                   className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer rounded-xl"
                 />
               </Link>
@@ -204,7 +211,7 @@ const ShopByOccasion = () => {
             <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
               <Link to={`/sympathy`} className=" cursor-pointer">
                 <img
-                  src={birthday}
+                  src={sympathy}
                   className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer rounded-xl"
                 />
               </Link>
@@ -226,7 +233,7 @@ const ShopByOccasion = () => {
             <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
               <Link to={`/justbecause`} className=" cursor-pointer">
                 <img
-                  src={birthday}
+                  src={cuz}
                   className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer rounded-xl"
                 />
               </Link>
