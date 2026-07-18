@@ -50,9 +50,12 @@ const Landingpage = () => {
               </h1>
 
               <p className="text-[#666666] text-[18px] mb-[30px]">
-                Finding the perfect gift shouldn't feel like a full-time job. <br />
-                Jay’s Gift Basket combines artisanal handpicked goods with <br />
-                show-stopping presentation, delivered straight to their door. <br />
+                Finding the perfect gift shouldn't feel like a full-time job.{" "}
+                <br />
+                Jay’s Gift Basket combines artisanal handpicked goods with{" "}
+                <br />
+                show-stopping presentation, delivered straight to their door.{" "}
+                <br />
                 You get all the credit, none of the stress.
               </p>
 
@@ -126,7 +129,15 @@ const Landingpage = () => {
 
           <div className=" max-w-[40vw] lg:max-w-[20vw] mb-[20px]">
             <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
-              <Link to={`/#contact`} className=" cursor-pointer">
+              <Link
+                to={`/#contact`}
+                onClick={() =>
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+                className=" cursor-pointer"
+              >
                 <img
                   src={coporate}
                   className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer rounded-xl"
@@ -138,6 +149,11 @@ const Landingpage = () => {
               <div className=" w-full flex flex-col items-center justify-center">
                 <Link
                   to={`/#contact`}
+                  onClick={() =>
+                    document
+                      .getElementById("contact")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
                   className=" line-clamp-2 text-[#000000] text-[20px] mb-2"
                 >
                   Build you Own Box
