@@ -3,8 +3,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import birthday from "@/assets/birthday-gift.png";
 import wedding from "@/assets/wedding-gift.png";
-import coporate from "@/assets/coporate-gift.png";
+import coporate from "@/assets/cnt.jpeg";
 import couples from "@/assets/couples-gift.png";
+import forHer from "@/assets/for-her.jpeg";
+import forHim from "@/assets/for-him.jpeg";
+import parents from "@/assets/parents.jpeg";
+import babies from "@/assets/baby.jpeg"
 
 const ShopByRecipient = () => {
   return (
@@ -50,7 +54,7 @@ const ShopByRecipient = () => {
             <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
               <Link to={`/forHer`} className=" cursor-pointer">
                 <img
-                  src={birthday}
+                  src={forHer}
                   className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer rounded-xl"
                 />
               </Link>
@@ -72,7 +76,7 @@ const ShopByRecipient = () => {
             <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
               <Link to={`/forHim`} className=" cursor-pointer">
                 <img
-                  src={coporate}
+                  src={forHim}
                   className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer rounded-xl"
                 />
               </Link>
@@ -94,7 +98,7 @@ const ShopByRecipient = () => {
             <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
               <Link to={`/forParents`} className=" cursor-pointer">
                 <img
-                  src={couples}
+                  src={parents}
                   className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer rounded-xl"
                 />
               </Link>
@@ -116,7 +120,7 @@ const ShopByRecipient = () => {
             <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
               <Link to={`/babiesandchildren`} className=" cursor-pointer">
                 <img
-                  src={couples}
+                  src={babies}
                   className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer rounded-xl"
                 />
               </Link>
@@ -138,7 +142,7 @@ const ShopByRecipient = () => {
             <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
               <Link to={`/corporatenteams`} className=" cursor-pointer">
                 <img
-                  src={couples}
+                  src={coporate}
                   className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer rounded-xl"
                 />
               </Link>
