@@ -38,18 +38,18 @@ const Landingpage = () => {
       <div className="min-h-[90vh] block">
         <div
           id="hero"
-          className="min-h-[90vh] overflow-hidden w-screen flex items-center justify-center pt-[138px] relative"
+          className="min-h-[90vh] overflow-hidden w-[100dvw] flex items-center justify-center pt-[138px] relative"
         >
           <div className="absolute inset-0 hero-bg"></div>
 
           {/* LEFT CONTENT */}
-          <div className="relative z-[6] h-full w-full flex items-center justify-start px-[5%]">
+          <div className="relative z-[6] h-full w-full flex items-center justify-start max-sm:justify-center px-[5%]">
             <div className="w-[70%]">
-              <h1 className="text-black text-[60px] max-sm:text-[40px] font-[600] leading-[70px] tracking-tight mb-[30px]">
+              <h1 className="text-black text-[60px] max-sm:text-[30px] font-[600] lg:leading-[70px] tracking-tight mb-[30px]">
                 You bring the thought. We’ll bring the wow.
               </h1>
 
-              <p className="text-[#666666] text-[18px] mb-[30px]">
+              <p className="text-[#666666] max-sm:text-[15px] text-[18px] mb-[30px]">
                 Finding the perfect gift shouldn't feel like a full-time job.{" "}
                 <br />
                 Jay’s Gift Basket combines artisanal handpicked goods with{" "}
