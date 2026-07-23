@@ -51,7 +51,7 @@ const Landingpage = () => {
           <div className=" w-full z-[10] flex max-sm:items-start justify-start mb-[20px]">
             <Link
               to={"/shop"}
-              className=" max-sm:mb-[20px] w-[45%] px-4 py-1 hover:bg-transparent text-[#fff] hover:text-[3B3B3B] duration-500 hover:border hover:border-[#fff] bg-[#3B3B3B] h-[40px] flex items-center justify-center font-light rounded-full hover:text-white"
+              className=" max-sm:mb-[20px] w-[45%] px-4 py-1 hover:bg-transparent text-[#fff] hover:text-[#3B3B3B] duration-500 hover:border hover:border-[#fff] bg-[#3B3B3B] h-[40px] flex items-center justify-center font-light rounded-full"
             >
               Shop Now
             </Link>
