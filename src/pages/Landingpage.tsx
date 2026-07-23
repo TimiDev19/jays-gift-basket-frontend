@@ -35,38 +35,30 @@ const Landingpage = () => {
 
   return (
     <div className="h-[100vh] w-[100vw] scroll-smooth overflow-y-scroll">
-      <div className="min-h-[90vh] block">
-        <div className=" lg:hidden bg-[#A87F3D] py-[20px] pb-[0] px-[8px] rounded-[30px] w-[90%] mt-[138px] mx-auto flex flex-col items-center justify-center">
-          <h1 className=" text-white text-center text-[24px] font-[500] mb-[10px]">
+      <div className="min-h-[20vh] block">
+        <div className=" lg:hidden bg-transparent py-[20px] pb-[0] px-[8px] rounded-[30px] w-[100%] mt-[138px] mx-auto flex flex-col items-center justify-center">
+          <h1 className=" text-[#3B3B3B] text-left w-full text-[24px] font-[500] mb-[10px]">
             You bring the thought. <br /> We’ll bring the wow.
           </h1>
 
-          <p className=" text-center text-[16px] text-[#FFFFFFCC] leading-loose mb-[20px]">
+          <p className=" text-left w-full text-[16px] text-[#3B3B3B] leading-loose mb-[20px]">
             Finding the perfect gift shouldn't feel like a full-time job.
             Jay’s Gift Basket combines artisanal handpicked goods with
             show-stopping presentation, delivered straight to their door.
             You get all the credit, none of the stress.
           </p>
 
-          <div className=" w-full flex max-sm:flex-col max-sm:items-start items-center justify-start mb-[20px]">
+          <div className=" w-full z-[10] flex max-sm:items-start justify-start mb-[20px]">
             <Link
               to={"/shop"}
-              className=" max-sm:mb-[20px] w-full px-4 py-1 hover:bg-transparent text-[#fff] duration-500 hover:border hover:border-[#fff] bg-[#3B3B3B] h-[40px] flex items-center justify-center font-light rounded-full hover:text-white"
+              className=" max-sm:mb-[20px] w-[45%] px-4 py-1 hover:bg-transparent text-[#fff] hover:text-[3B3B3B] duration-500 hover:border hover:border-[#fff] bg-[#3B3B3B] h-[40px] flex items-center justify-center font-light rounded-full hover:text-white"
             >
               Shop Now
             </Link>
-
-            <Link
-              target="_blank"
-              to={"https://wa.me/+2348024015795"}
-              className=" px-4 py-1 w-full bg-transparent hover:bg-[#3B3B3B] hover:text-[#fff] duration-500 border border-[#fff] hover:border-0 h-[40px] flex items-center justify-center font-light rounded-full text-[#fff]"
-            >
-              Chat On Whatsapp
-            </Link>
           </div>
 
-          <div className="w-full h-[194px] flex items-center justify-end rounded-tr-[40px] p-0">
-            <div className=" h-full w-[194px] fruit-hero-bg rounded-full"></div>
+          <div className="w-full h-[194px] flex items-center justify-center rounded-tr-[40px] p-0">
+            <div className=" w-full h-[40vh] fruit-hero-bg rounded-none"></div>
           </div>
         </div>
 
