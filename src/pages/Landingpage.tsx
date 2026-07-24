@@ -36,22 +36,20 @@ const Landingpage = () => {
   return (
     <div className="h-[100vh] w-[100vw] scroll-smooth overflow-y-scroll">
       <div className="min-h-[20vh] block">
-        <div className=" lg:hidden bg-transparent py-[20px] pb-[0] px-[8px] rounded-[30px] w-[100%] mt-[138px] mx-auto flex flex-col items-center justify-center">
-          <h1 className=" text-[#3B3B3B] text-left w-full text-[24px] font-[500] mb-[10px]">
-            You bring the thought. <br /> We’ll bring the wow.
+        <div className=" lg:hidden bg-transparent hero-bg py-[20px] pb-[0] px-[8px] rounded-[30px] w-[100%] mt-[138px] mx-auto flex flex-col items-center justify-center">
+          <h1 className=" text-[#000] text-center w-full text-[40px] font-[600] mb-[10px]">
+            Curated Gift Baskets for Every Special Moment
           </h1>
 
-          <p className=" text-left w-full text-[16px] text-[#3B3B3B] leading-loose mb-[20px]">
-            Finding the perfect gift shouldn't feel like a full-time job.
-            Jay’s Gift Basket combines artisanal handpicked goods with
-            show-stopping presentation, delivered straight to their door.
-            You get all the credit, none of the stress.
+          <p className=" text-center w-full text-[16px] text-[#3B3B3B] leading-loose mb-[20px]">
+            Handpicked items, beautifully packaged and delivered on time so you
+            can make every occasion feel effortless and unforgettable.
           </p>
 
           <div className=" w-full z-[10] flex max-sm:items-start justify-start mb-[20px]">
             <Link
               to={"/shop"}
-              className=" max-sm:mb-[20px] w-[45%] px-4 py-1 hover:bg-transparent text-[#fff] hover:text-[#3B3B3B] duration-500 hover:border hover:border-[#fff] bg-[#3B3B3B] h-[40px] flex items-center justify-center font-light rounded-full"
+              className=" max-sm:mb-[20px] w-[100%] px-4 py-1 bg-[#A87F3D] text-[#fff] hover:text-[#fff] duration-500 hover:bg-[#3B3B3B] h-[40px] flex items-center justify-center font-light rounded-full"
             >
               Shop Now
             </Link>
