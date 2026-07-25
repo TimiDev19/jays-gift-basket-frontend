@@ -34,7 +34,7 @@ const Navbar = () => {
     <>
       <div className=" z-50 fixed w-full">
         <div className=" w-full">
-          <div className="flex w-full h-[90px] items-center justify-between pxpx py-3 bg-white">
+          <div className="flex w-full max-sm:min-h-[10px] h-[90px] items-center justify-between pxpx py-3 bg-white">
             <div className=" flex items-center justify-center">
               <h1 className=" font-semibold text-xl flex items-center justify-center ">
                 <Link to={"/"}>
@@ -84,7 +84,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className=" h-[48px] w-[100vw] bg-[#fff] flex items-center justify-between px-[5%]">
+        <div className=" max-sm:hidden h-[48px] w-[100vw] bg-[#fff] flex items-center justify-between px-[5%]">
           <div className=" lg:flex hidden items-center justify-center space-x-8 h-[48px] rounded-full">
             <Link
               to={"/"}
@@ -148,7 +148,7 @@ const Navbar = () => {
           <Link
             target="_blank"
             to={"https://wa.me/+2348024015795"}
-            className="relative group text-[16px] text-[#fff] duration-500 mb-[20px] hover:bg-transparent h-full flex items-center justify-center bg-[#A87F3D] hover:text-[#A87F3D] hover:font-semibold montserrat rounded-full px-6"
+            className="relative max-sm:hidden group text-[16px] text-[#fff] duration-500 mb-[20px] hover:bg-transparent h-full flex items-center justify-center bg-[#A87F3D] hover:text-[#A87F3D] hover:font-semibold montserrat rounded-full px-6"
           >
             Chat On WhatsApp
           </Link>

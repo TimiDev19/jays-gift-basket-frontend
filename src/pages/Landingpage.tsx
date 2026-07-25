@@ -36,7 +36,7 @@ const Landingpage = () => {
   return (
     <div className="h-[100vh] w-[100vw] scroll-smooth overflow-y-scroll">
       <div className="min-h-[20vh] block">
-        <div className=" lg:hidden bg-transparent hero-bg py-[20px] pb-[0] px-[8px] rounded-[30px] w-[100%] mt-[138px] mx-auto flex flex-col items-center justify-center">
+        <div className=" lg:hidden bg-transparent hero-bg py-[20px] pb-[0] px-[8px] rounded-[30px] w-[100%] mt-[60px] mx-auto flex flex-col items-center justify-center">
           <h1 className=" text-[#000] text-center w-full text-[40px] font-[600] mb-[10px]">
             Curated Gift Baskets for Every Special Moment
           </h1>
