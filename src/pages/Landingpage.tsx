@@ -13,6 +13,7 @@ import birthday from "@/assets/birthday-gift.png";
 import wedding from "@/assets/wedding-gift.png";
 import coporate from "@/assets/coporate-gift.png";
 import couples from "@/assets/couples-gift.png";
+import picnic from "@/assets/picnic.png"
 
 const Landingpage = () => {
   const [personaliseOpen, setPersonalizeOpen] = useState(false);
@@ -36,7 +37,23 @@ const Landingpage = () => {
   return (
     <div className="h-[100vh] w-[100vw] scroll-smooth overflow-y-scroll">
       <div className="min-h-[20vh] block">
-        <div className=" lg:hidden bg-transparent hero-bg py-[20px] pb-[0] px-[8px] rounded-[30px] w-[100%] mt-[60px] mx-auto flex flex-col items-center justify-center">
+        <div className=" lg:hidden w-[100vw] flex flex-col items-center justify-center mt-[110px]">
+          <p className=" text-[14px] geist font-thin mb-[10px]">
+            Same Day Delivery available
+          </p>
+          <h1 className=" font-[900] text-[58px] text-center big-shoulders w-[90%] mb-[10px]">
+            You bring the thought. We’ll bring the wow.
+          </h1>
+          <p className=" text-[16px] geist font-thin text-center w-[90%] mb-[30px]">
+            Finding the perfect gift shouldn't feel like a full-time job. <br />{" "}
+            Jay’s Gift Basket combines artisanal handpicked goods with <br />{" "}
+            show-stopping presentation, delivered straight to their door. <br />{" "}
+            You get all the credit, none of the stress.
+          </p>
+
+          <img src={picnic} alt="" className=" w-[90%] h-auto mb-[20px]" />
+        </div>
+        {/* <div className=" lg:hidden bg-transparent hero-bg py-[20px] pb-[0] px-[8px] rounded-[30px] w-[100%] mt-[60px] mx-auto flex flex-col items-center justify-center">
           <h1 className=" text-[#000] text-center w-full text-[40px] font-[600] mb-[10px]">
             Curated Gift Baskets for Every Special Moment
           </h1>
@@ -58,7 +75,7 @@ const Landingpage = () => {
           <div className="w-full h-[194px] flex items-center justify-center rounded-tr-[40px] p-0">
             <div className=" w-full h-[40vh] fruit-hero-bg rounded-none"></div>
           </div>
-        </div>
+        </div> */}
 
         <div
           id="hero"
@@ -192,19 +209,19 @@ const Landingpage = () => {
       <Shop />
 
       <section id="about" className=" w-full block pt-[150px] mb-[10vh]">
-        <div className=" w-full lg:h-[70vh] flex max-sm:flex-col items-start justify-center max-sm:items-start px-[5%] space-x-[5%]">
+        <div className=" w-full lg:h-[70vh] flex max-sm:flex-col items-start justify-center max-sm:items-center px-[5%] space-x-[5%]">
           <div className=" max-sm:mb-[10vh] max-sm:w-full max-sm:h-[50vh] w-[40%] h-[70vh] flex items-start justify-center">
             <div className=" w-full h-full about-lfb-bg rounded-3xl"></div>
           </div>
 
-          <div className=" w-[50%] max-sm:w-full min-h-[50vh] flex flex-col items-start justify-start">
-            <h1 className=" text-center text-[#A87F3D] text-[18px] uppercase">
+          <div className=" w-[50%] max-sm:w-full min-h-[50vh] flex flex-col items-start max-sm:items-center max-sm:justify-center justify-start">
+            <h1 className=" text-center text-[#A87F3D] text-[18px] uppercase max-sm:mb-[10px]">
               About Us
             </h1>
             <h1 className=" capitalize text-[32px] text-[#3B3B3B] font-[600]">
               where thoughtful gifting meets elegance
             </h1>
-            <p className=" text-[16px] text-[#868C98] font-[300] mb-[20px] leading-[2.3] montserrat">
+            <p className=" text-[16px] text-[#868C98] font-[300] mx-auto mb-[20px] leading-[2.3] montserrat">
               We specialize in creating beautifully curated gift baskets
               designed to make every moment feel special. From fresh fruits and
               gourmet treats to luxury gift packages and custom hampers, every
