@@ -211,81 +211,50 @@ const Shop = () => {
             </div>
           </div>
         ) : (
-          <div className=" w-full grid grid-cols-2 lg:grid-cols-4">
+          <div className="w-full grid grid-cols-2 lg:grid-cols-4 items-stretch gap-x-6 gap-y-10 lg:gap-y-14 mb-[50px]">
             {products.map((product) => (
               <div
                 key={product._id}
-                className=" max-w-[40vw] lg:max-w-[20vw] mb-[20px]"
+                className="max-w-[40vw] lg:max-w-[20vw] flex flex-col h-full" // ← removed mb-[20px]
               >
                 <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
                   <Link
                     to={`/product/${product._id}`}
-                    className=" cursor-pointer"
+                    className="cursor-pointer"
                   >
                     <img
                       src={product.avatar}
                       alt={product.name}
                       className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer rounded-t-xl"
-                      // onClick={() => {
-                      //     const params = new URLSearchParams({
-                      //         _id: product._id,
-                      //         name: product.name,
-                      //         description: product.description,
-                      //         price: product.price.toString(),
-                      //         avatar: product.avatar,
-                      //     });
-
-                      //     router.push(`/shop/${product._id}?${params}`)
-                      // }}
                     />
                   </Link>
                 </div>
 
-                <div className=" w-full flex items-center justify-between">
-                  <div className=" w-full">
+                <div className="w-full flex flex-col flex-1 items-center justify-between">
+                  <div className="w-full flex flex-col flex-1">
                     <Link
                       to={`/product/${product._id}`}
-                      className=" text-[16px] lg:text-[22px] font-[400] text-black hover:underline duration-700 ease-in-out cursor-pointer mb-2 block"
+                      className="text-[16px] lg:text-[22px] font-[400] text-black hover:underline duration-700 ease-in-out cursor-pointer mb-2 block line-clamp-2 min-h-[28px] lg:min-h-[56px]"
                     >
                       {product.name}
                     </Link>
 
-                    <p className=" line-clamp-2 text-[#A87F3DB2] text-[12px] mb-2">
+                    <p className="line-clamp-2 text-[#A87F3D] text-[12px] mb-2 min-h-[32px]">
                       {product.description}
                     </p>
 
-                    <h1 className=" text-black font-[400] text-[20px] lg:text-[28px] mb-2">
+                    <h1 className="text-black font-[400] text-[20px] lg:text-[28px] mb-2">
                       ₦{product.price.toLocaleString()}
                     </h1>
 
                     <div
                       onClick={() => handleAddToCart(product)}
-                      className=" cursor-pointer h-[24px] lg:h-[42px] hover:bg-transparent text-[#fff] w-full hover:text-[#A87F3D] duration-500 bg-[#A87F3D] rounded-xl flex text-[14px] font-[300] items-center justify-center"
+                      className="cursor-pointer h-[24px] lg:h-[42px] hover:bg-transparent text-[#fff] w-full hover:text-[#A87F3D] duration-500 bg-[#A87F3D] rounded-xl flex text-[14px] font-[300] items-center justify-center mt-auto"
                     >
-                      {/* <ShoppingBag01Icon
-                    className=" "
-                    size={22}
-                    strokeWidth={1.5}
-                  /> */}
                       Add To Cart
                     </div>
                   </div>
-
-                  {/* <div
-                onClick={() => handleAddToCart(product)}
-                className=" cursor-pointer h-[24px] lg:h-[42px] hover:bg-transparent w-[24px] text-[#EFF901] hover:text-[#A87F3D] duration-500 lg:w-[42px] bg-[#A87F3D] rounded-full flex items-center justify-center"
-              >
-                <ShoppingBag01Icon
-                  className=" "
-                  size={22}
-                  strokeWidth={1.5}
-                />
-              </div> */}
                 </div>
-
-                {/* <h2 className="mt-2 font-semibold">{product.name}</h2>
-            <p className="text-sm">{product.description}</p>
-            <p className="font-bold">₦{product.price}</p> */}
               </div>
             ))}
           </div>

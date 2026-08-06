@@ -13,7 +13,7 @@ import birthday from "@/assets/birthday-gift.png";
 import wedding from "@/assets/wedding-gift.png";
 import coporate from "@/assets/coporate-gift.png";
 import couples from "@/assets/couples-gift.png";
-import picnic from "@/assets/picnic.png"
+import picnic from "@/assets/picnic.png";
 
 const Landingpage = () => {
   const [personaliseOpen, setPersonalizeOpen] = useState(false);
@@ -53,44 +53,21 @@ const Landingpage = () => {
 
           <img src={picnic} alt="" className=" w-[90%] h-auto mb-[20px]" />
         </div>
-        {/* <div className=" lg:hidden bg-transparent hero-bg py-[20px] pb-[0] px-[8px] rounded-[30px] w-[100%] mt-[60px] mx-auto flex flex-col items-center justify-center">
-          <h1 className=" text-[#000] text-center w-full text-[40px] font-[600] mb-[10px]">
-            Curated Gift Baskets for Every Special Moment
-          </h1>
-
-          <p className=" text-center w-full text-[16px] text-[#3B3B3B] leading-loose mb-[20px]">
-            Handpicked items, beautifully packaged and delivered on time so you
-            can make every occasion feel effortless and unforgettable.
-          </p>
-
-          <div className=" w-full z-[10] flex max-sm:items-start justify-start mb-[20px]">
-            <Link
-              to={"/shop"}
-              className=" max-sm:mb-[20px] w-[100%] px-4 py-1 bg-[#A87F3D] text-[#fff] hover:text-[#fff] duration-500 hover:bg-[#3B3B3B] h-[40px] flex items-center justify-center font-light rounded-full"
-            >
-              Shop Now
-            </Link>
-          </div>
-
-          <div className="w-full h-[194px] flex items-center justify-center rounded-tr-[40px] p-0">
-            <div className=" w-full h-[40vh] fruit-hero-bg rounded-none"></div>
-          </div>
-        </div> */}
 
         <div
           id="hero"
-          className="min-h-[90vh] overflow-hidden w-[100dvw] hidden lg:flex items-center justify-center pt-[138px] relative"
+          className="min-h-[120vh] overflow-hidden hero-bg w-[100dvw] hidden lg:flex items-center justify-center relative"
         >
-          <div className="absolute inset-0 hero-bg"></div>
+          <div className="absolute inset-0"></div>
 
           {/* LEFT CONTENT */}
           <div className="relative z-[6] h-full w-full flex items-center justify-start max-sm:justify-center px-[5%]">
             <div className="w-[70%]">
-              <h1 className="text-black text-[60px] max-sm:text-[30px] font-[600] lg:leading-[70px] tracking-tight mb-[30px]">
+              <h1 className="text-white text-[60px] max-sm:text-[30px] font-[600] lg:leading-[70px] tracking-tight mb-[30px]">
                 You bring the thought. We’ll bring the wow.
               </h1>
 
-              <p className="text-[#666666] max-sm:text-[15px] text-[18px] mb-[30px]">
+              <p className="text-[#fff] max-sm:text-[15px] text-[18px] mb-[30px]">
                 Finding the perfect gift shouldn't feel like a full-time job.{" "}
                 <br />
                 Jay’s Gift Basket combines artisanal handpicked goods with{" "}
@@ -102,7 +79,7 @@ const Landingpage = () => {
 
               <Link
                 to={"/shop"}
-                className="w-[164px] px-4 py-1 hover:bg-transparent text-white duration-500 hover:border hover:border-[#A87F3D] bg-[#A87F3D] h-[48px] flex items-center justify-center font-light rounded-full hover:text-[#A87F3D]"
+                className="w-[164px] px-4 py-1 hover:bg-transparent text-white duration-500 hover:border hover:border-[#fff] bg-[#A87F3D] h-[48px] flex items-center justify-center font-light rounded-full hover:text-[#fff]"
               >
                 Shop Now
               </Link>
@@ -110,11 +87,11 @@ const Landingpage = () => {
           </div>
 
           {/* RIGHT IMAGE */}
-          <div className="absolute inset-0 z-[5] flex items-end justify-end">
+          {/* <div className="absolute inset-0 z-[5] flex items-end justify-end">
             <div className="h-full w-[50%] flex items-end justify-end">
               <img src={Basket} alt="" className="max-h-full object-contain" />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -222,16 +199,18 @@ const Landingpage = () => {
               where thoughtful gifting meets elegance
             </h1>
             <p className=" text-[16px] text-[#868C98] font-[300] mx-auto mb-[20px] leading-[2.3] montserrat">
-              We specialize in creating beautifully curated gift baskets
-              designed to make every moment feel special. From fresh fruits and
-              gourmet treats to luxury gift packages and custom hampers, every
-              basket is carefully arranged with quality, style, and attention to
-              detail. <br />
-              At Jays Gift Basket, we believe a gift should do more than look
-              good — it should create a memorable experience. Whether you’re
-              celebrating birthdays, anniversaries, graduations, corporate
-              milestones, or simply showing appreciation, we help you deliver
-              meaningful gifts that leave a lasting impression.
+              Welcome to Jay's Gift Basket—where gifting meets pure personality
+              and unmatched style. <br />
+              We break the mold of ordinary, one-size-fits-all giving. From
+              hyper-curated luxury hampers, gourmet food selections, and tech
+              gadgets to health-conscious sets and lifestyle boxes, we design
+              bespoke gifts tailored for every vibe, milestone, and
+              budget.Planning a wedding? We bring elite flair and flawless
+              traditional elegance to your big day with our signature Eru Iyawo
+              packaging, sorting, and wrapping services. <br />
+              Whether it is an intimate celebration or a massive corporate
+              statement, we mix bold aesthetics with practical perfection to
+              turn every moment into an unforgettable experience.
             </p>
 
             {/* <Link
@@ -252,13 +231,13 @@ const Landingpage = () => {
             </h1>
 
             <p className=" text-[16px] text-[#868C98] font-light text-center mb-[10px]">
-              From corporate giants to boutique brands, we’ve had the pleasure
-              of delivering <br /> freshness to some of the finest names in
-              Nigeria
+              From corporate powerhouses to local favorites, we’re proud to help
+              top brands across Nigeria share thoughtful, show-stopping gift
+              baskets with the people who matter most.
             </p>
             <InfiniteCarousel />
             <h1 className=" text-[24px] text-[#A87F3D]">
-              Over <b>2,000</b> Baskets Delivered
+              Over <b>5,000</b> Boxes Delivered
             </h1>
           </div>
         </div>
@@ -275,10 +254,9 @@ const Landingpage = () => {
               Personalize Your Pick!
             </h1>
             <p className=" w-[50%] max-sm:w-full text-center text-white font-[300] mb-[20px]">
-              Want to create something truly unique? Let’s design the perfect
-              basket together. Whether you need a specific fruit mix or a
-              special theme, our gift curator is ready to help you bring your
-              vision to life.
+              Craft a gift as unique as the person receiving it. Work directly
+              with our curator to tailor every detail—from handpicked items to
+              bespoke gift hampers, boxes, and baskets designed just for you.
             </p>
             <button
               onClick={() => setPersonalizeOpen(true)}

@@ -57,54 +57,28 @@ const Footer = () => {
           <ol>
             <li>
               <Link
-                to={""}
-                onClick={() =>
-                  document
-                    .getElementById("shop")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
+                to={"/shopByRecipient"}
+                // onClick={() =>
+                //   document
+                //     .getElementById("shop")
+                //     ?.scrollIntoView({ behavior: "smooth" })
+                // }
                 className=" block hover:underline duration-500 text-[#3B3B3B] font-[300] mb-3"
               >
-                Valentine Baskets
+               Shop By Recipient
               </Link>
             </li>
             <li>
               <Link
-                to={""}
-                onClick={() =>
-                  document
-                    .getElementById("shop")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
+                to={"/shopByOccassion"}
+                // onClick={() =>
+                //   document
+                //     .getElementById("shop")
+                //     ?.scrollIntoView({ behavior: "smooth" })
+                // }
                 className=" block hover:underline duration-500 text-[#3B3B3B] font-[300] mb-3"
               >
-                Christmas Baskets
-              </Link>
-            </li>
-            <li>
-              <Link
-                to={""}
-                onClick={() =>
-                  document
-                    .getElementById("shop")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-                className=" block hover:underline duration-500 text-[#3B3B3B] font-[300] mb-3"
-              >
-                Birthday Baskets
-              </Link>
-            </li>
-            <li>
-              <Link
-                to={""}
-                onClick={() =>
-                  document
-                    .getElementById("shop")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-                className=" block hover:underline duration-500 text-[#3B3B3B] font-[300] mb-3"
-              >
-                Corporate Baskets
+                Shop By Occassion
               </Link>
             </li>
           </ol>
