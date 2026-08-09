@@ -37,6 +37,8 @@ const Landingpage = () => {
   return (
     <div className="h-[100vh] w-[100vw] scroll-smooth overflow-y-scroll">
       <div className="min-h-[20vh] block">
+        <div className=" h-[50vh] lg:h-[100vh] w-[100vw] top-hero-bg mt-[110px]"></div>
+
         <div className=" lg:hidden w-[100vw] flex flex-col items-center justify-center mt-[110px]">
           <p className=" text-[14px] geist font-thin mb-[10px]">
             Same Day Delivery available
@@ -56,18 +58,18 @@ const Landingpage = () => {
 
         <div
           id="hero"
-          className="min-h-[120vh] overflow-hidden hero-bg w-[100dvw] hidden lg:flex items-center justify-center relative"
+          className="min-h-[100vh] overflow-hidden hero-bg w-[100dvw] hidden lg:flex items-center justify-center relative"
         >
           <div className="absolute inset-0"></div>
 
           {/* LEFT CONTENT */}
           <div className="relative z-[6] h-full w-full flex items-center justify-start max-sm:justify-center px-[5%]">
             <div className="w-[70%]">
-              <h1 className="text-white text-[60px] max-sm:text-[30px] font-[600] lg:leading-[70px] tracking-tight mb-[30px]">
+              <h1 className="text-black text-[60px] max-sm:text-[30px] font-[600] lg:leading-[70px] tracking-tight mb-[30px]">
                 You bring the thought. We’ll bring the wow.
               </h1>
 
-              <p className="text-[#fff] max-sm:text-[15px] text-[18px] mb-[30px]">
+              <p className="text-[#666666] max-sm:text-[15px] text-[18px] mb-[30px]">
                 Finding the perfect gift shouldn't feel like a full-time job.{" "}
                 <br />
                 Jay’s Gift Basket combines artisanal handpicked goods with{" "}
@@ -87,11 +89,11 @@ const Landingpage = () => {
           </div>
 
           {/* RIGHT IMAGE */}
-          {/* <div className="absolute inset-0 z-[5] flex items-end justify-end">
+          <div className="absolute inset-0 z-[5] flex items-end justify-end">
             <div className="h-full w-[50%] flex items-end justify-end">
               <img src={Basket} alt="" className="max-h-full object-contain" />
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
 

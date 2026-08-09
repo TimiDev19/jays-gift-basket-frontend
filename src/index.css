@@ -102,6 +102,14 @@ body{
 
 .hero-bg {
   background-image: 
+  url("./assets/hero-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.top-hero-bg {
+  background-image: 
   url("./assets/glowing-bg.png");
   background-position: center;
   background-repeat: no-repeat;
