@@ -42,7 +42,7 @@ const Navbar = () => {
                 </Link>
               </h1>
 
-              <h1 className=" text-[#3B3B3B] text-[20px] montserrat font-[500] mr-[50px]">
+              <h1 className=" text-[#3B3B3B] text-[20px] inter font-[500] mr-[50px]">
                 Jay's Gift Basket
               </h1>
 

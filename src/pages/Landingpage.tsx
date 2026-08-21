@@ -43,7 +43,7 @@ const Landingpage = () => {
           <p className=" text-[14px] geist font-thin mb-[10px]">
             Same Day Delivery available
           </p>
-          <h1 className=" font-[900] text-[58px] text-center big-shoulders w-[90%] mb-[10px]">
+          <h1 className=" font-[900] text-[40px] text-center geist w-[90%] mb-[10px]">
             You bring the thought. We’ll bring the wow.
           </h1>
           <p className=" text-[16px] geist font-thin text-center w-[90%] mb-[30px]">
@@ -65,7 +65,7 @@ const Landingpage = () => {
           {/* LEFT CONTENT */}
           <div className="relative z-[6] h-full w-full flex items-center justify-start max-sm:justify-center px-[5%]">
             <div className="w-[70%]">
-              <h1 className="text-black text-[60px] max-sm:text-[30px] font-[600] lg:leading-[70px] tracking-tight mb-[30px]">
+              <h1 className="text-black text-[60px] max-sm:text-[30px] geist font-[600] lg:leading-[70px] tracking-tight mb-[30px]">
                 You bring the thought. We’ll bring the wow.
               </h1>
 
