@@ -35,6 +35,7 @@ import JustBecause from "./pages/JustBecause";
 import Valentines from "./pages/Valentines";
 import MothersDay from "./pages/MothersDay";
 import FathersDay from "./pages/FathersDay";
+import ChristmasPromo from "./pages/ChristmasPromo";
 
 function App() {
   return (
@@ -56,6 +57,7 @@ function App() {
           <Route path="/corporatenteams" element={<CorporateNTeams />} />
 
           <Route path="/christmas" element={<Christmas />} />
+          <Route path="/christmas_promo" element={<ChristmasPromo />} />
           <Route path="/newyear" element={<NewYear />} />
           <Route path="/birthday" element={<Birthday />} />
           <Route path="/newbabywelcomes" element={<NewBabyWelcomes />} />

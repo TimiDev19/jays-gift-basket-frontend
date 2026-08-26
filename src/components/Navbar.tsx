@@ -127,6 +127,19 @@ const Navbar = () => {
               <span className="absolute left-1/2 bottom-0 w-0 h-[1px] bg-black transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
             </Link>
 
+            <Link
+              to={"/christmas_promo"}
+              className="relative group text-[16px] text-[#000]"
+              onClick={() =>
+                document
+                  .getElementById("about")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              Christmas
+              <span className="absolute left-1/2 bottom-0 w-0 h-[1px] bg-black transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+            </Link>
+
             
 
             {/* <Link
