@@ -22,7 +22,7 @@ const Footer = () => {
           </div>
 
           <p className=" text-[#525866] text-[16px] mb-[20px]">
-            We carefully handpick the finest fruits in our fruit baskets to
+            We carefully handpick the finest gifts in our gift baskets to
             ensure they are perfect on delivery
           </p>
 
