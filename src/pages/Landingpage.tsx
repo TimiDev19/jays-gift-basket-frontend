@@ -225,20 +225,22 @@ const Landingpage = () => {
         </div>
       </section>
 
-      <div className=" block  mb-[10vh]">
-        <div className=" w-full px-[5%] min-h-[40vh] flex flex-col items-center justify-center">
-          <div className=" w-[100%] h-full flex flex-col items-center justify-center max-sm:justify-start max-sm:mb-[30px]">
-            <h1 className=" text-[32px] text-[#A87F3D] mb-[10px] text-center">
+      <div className="block py-[7vh] mb-[10vh]">
+        <div className="w-full px-[5%] min-h-[40vh] flex flex-col items-center justify-center">
+          <div className="w-full h-full flex flex-col items-center justify-center max-sm:justify-start max-sm:mb-[30px]">
+            <h1 className="text-[32px] text-[#A87F3D] mb-4 text-center">
               Trusted by Industry Leaders
             </h1>
 
-            <p className=" text-[16px] text-[#868C98] font-light text-center mb-[10px]">
+            <p className="max-w-3xl text-[16px] text-[#868C98] font-light text-center mb-8 leading-relaxed">
               From corporate powerhouses to local favorites, we’re proud to help
               top brands across Nigeria share thoughtful, show-stopping gift
               baskets with the people who matter most.
             </p>
-            <InfiniteCarousel />
-            <h1 className=" text-[24px] text-[#A87F3D]">
+            <div className="w-full mb-6">
+              <InfiniteCarousel />
+            </div>
+            <h1 className="mt-2 text-[24px] text-[#A87F3D] text-center">
               Over <b>5,000</b> Boxes Delivered
             </h1>
           </div>

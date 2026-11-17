@@ -945,6 +945,7 @@ const HEAVY_ITEM_MULTIPLIERS: Record<string, number> = {
 };
 
 const BASKET_LIMIT = 10;
+const CAR_DELIVERY_ORDER_THRESHOLD = 100_000;
 const SAME_DAY_DELIVERY_CUTOFF_HOUR = 14;
 const NOTE_MAX_LENGTH = 300;
 
@@ -989,6 +990,10 @@ const isPastSameDayDeliveryCutoff = (): boolean =>
   getWatDateParts().hour >= SAME_DAY_DELIVERY_CUTOFF_HOUR;
 
 const getDeliveryMultiplier = (cart: CartItemType[]): number => {
+  const subtotal = cart.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
   const totalQuantity = cart.reduce(
     (acc: number, item: CartItemType) => acc + item.quantity,
     0
@@ -1003,7 +1008,9 @@ const getDeliveryMultiplier = (cart: CartItemType[]): number => {
     }
   }
 
-  return Math.max(heavyMultiplier, quantityMultiplier);
+  const carDeliveryMultiplier = subtotal > CAR_DELIVERY_ORDER_THRESHOLD ? 2 : 1;
+
+  return Math.max(heavyMultiplier, quantityMultiplier, carDeliveryMultiplier);
 };
 
 const CartModal = () => {
@@ -1503,7 +1510,9 @@ const CartModal = () => {
       {fulfillmentType === "delivery" && deliveryMultiplier > 1 && (
         <div className="bg-amber-50 border border-amber-300 text-amber-800 text-[0.8rem] px-4 py-2 rounded">
           ⚠️{" "}
-          {cart.some(
+          {subtotal > CAR_DELIVERY_ORDER_THRESHOLD
+            ? "Orders over ₦100,000 are delivered by car, so the delivery fee is doubled."
+            : cart.some(
             (item: CartItemType) => HEAVY_ITEM_MULTIPLIERS[item.name]
           ) &&
           cart.reduce(
@@ -1511,8 +1520,7 @@ const CartModal = () => {
             0
           ) === 1
             ? "Your cart contains a large item that requires a bigger vehicle."
-            : "Multiple items in your cart require a larger delivery vehicle."}{" "}
-          Delivery fee is increased.
+            : "Multiple items in your cart require a larger delivery vehicle. Delivery fee is increased."}
         </div>
       )}
 

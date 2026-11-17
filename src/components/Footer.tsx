@@ -7,6 +7,7 @@ import { smoothScrollToSection } from "./SmoothScrollToSection";
 import logo from "../assets/logo.png";
 import { Call02Icon, InstagramIcon, WhatsappIcon } from "hugeicons-react";
 import Copyright from "./Copyright";
+import { Gift, Heart } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -79,6 +80,30 @@ const Footer = () => {
                 className=" block hover:underline duration-500 text-[#3B3B3B] font-[300] mb-3"
               >
                 Shop By Occassion
+              </Link>
+            </li>
+            <li className="mt-5">
+              <Link
+                to="/christmas_promo"
+                className="inline-flex items-center gap-2 rounded-full border border-[#C9A96E] bg-[#173D32] px-3 py-2 text-sm font-medium text-[#FFF9EC] shadow-sm transition-colors duration-300 hover:bg-[#205141]"
+              >
+                <Gift size={16} strokeWidth={1.7} className="text-[#E4C47D]" />
+                <span>Christmas</span>
+                <span className="rounded-full bg-[#A9444C] px-2 py-0.5 text-[9px] font-semibold uppercase tracking-[0.12em] text-white">
+                  Super Deals
+                </span>
+              </Link>
+            </li>
+            <li className="mt-3">
+              <Link
+                to="/wedding"
+                className="inline-flex items-center gap-2 rounded-full border border-[#D7B88F] bg-[#754558] px-3 py-2 text-sm font-medium text-[#FFF8F4] shadow-sm transition-colors duration-300 hover:bg-[#89536A]"
+              >
+                <Heart size={16} strokeWidth={1.7} className="text-[#F2D8C8]" />
+                <span>Eru Iyawo</span>
+                <span className="rounded-full bg-[#E8D0B0] px-2 py-0.5 text-[9px] font-semibold uppercase tracking-[0.12em] text-[#5B3947]">
+                  Bridal gifts
+                </span>
               </Link>
             </li>
           </ol>

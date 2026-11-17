@@ -17,7 +17,7 @@ import {
   Search01Icon,
   ShoppingBag01Icon,
 } from "hugeicons-react";
-import { ChevronDown, Gift, Menu, X } from "lucide-react";
+import { ChevronDown, Gift, Heart, Menu, X } from "lucide-react";
 import { openSearch } from "@/store/searchSlice";
 import NavDropdown from "./NavDropdown";
 
@@ -154,6 +154,17 @@ const Navbar = () => {
               <span className="rounded-full bg-[#A9444C] px-2 py-0.5 text-[9px] font-semibold uppercase tracking-[0.12em] text-white">Super Deals</span>
             </Link>
 
+            <Link
+              to="/wedding"
+              className="group relative mb-1 inline-flex items-center gap-2 overflow-hidden rounded-full border border-[#D7B88F] bg-[#754558] px-4 py-2 text-[15px] font-medium text-[#FFF8F4] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#89536A] hover:shadow-md"
+            >
+              <Heart size={16} strokeWidth={1.7} className="text-[#F2D8C8]" />
+              <span>Eru Iyawo</span>
+              <span className="rounded-full bg-[#E8D0B0] px-2 py-0.5 text-[9px] font-semibold uppercase tracking-[0.12em] text-[#5B3947]">
+                Bridal gifts
+              </span>
+            </Link>
+
             
 
             {/* <Link
@@ -264,6 +275,17 @@ const Navbar = () => {
                   <Gift size={19} strokeWidth={1.7} className="text-[#E4C47D]" />
                   <span>Christmas</span>
                   <span className="ml-auto rounded-full bg-[#A9444C] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-white">Super Deals</span>
+                </Link>
+                <Link
+                  to="/wedding"
+                  onClick={() => dispatch(toggleMobileMenu(false))}
+                  className="my-2 flex items-center gap-3 rounded-xl border border-[#D7B88F] bg-[#754558] px-4 py-3 text-base font-medium text-[#FFF8F4] shadow-sm transition-colors hover:bg-[#89536A]"
+                >
+                  <Heart size={19} strokeWidth={1.7} className="text-[#F2D8C8]" />
+                  <span>Eru Iyawo</span>
+                  <span className="ml-auto rounded-full bg-[#E8D0B0] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#5B3947]">
+                    Bridal gifts
+                  </span>
                 </Link>
                 <a href="https://wa.me/+2348024015795" target="_blank" rel="noreferrer" onClick={() => dispatch(toggleMobileMenu(false))} className="mt-4 flex items-center justify-center rounded-full bg-[#A87F3D] px-6 py-3 text-base text-white">Chat On WhatsApp</a>
               </div>
