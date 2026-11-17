@@ -151,7 +151,7 @@ const Navbar = () => {
             >
               <Gift size={16} strokeWidth={1.7} className="text-[#E4C47D]" />
               <span>Christmas</span>
-              <span className="rounded-full bg-[#A9444C] px-2 py-0.5 text-[9px] font-semibold uppercase tracking-[0.12em] text-white">Gifts</span>
+              <span className="rounded-full bg-[#A9444C] px-2 py-0.5 text-[9px] font-semibold uppercase tracking-[0.12em] text-white">Super Deals</span>
             </Link>
 
             
@@ -263,7 +263,7 @@ const Navbar = () => {
                 >
                   <Gift size={19} strokeWidth={1.7} className="text-[#E4C47D]" />
                   <span>Christmas</span>
-                  <span className="ml-auto rounded-full bg-[#A9444C] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-white">Gift collection</span>
+                  <span className="ml-auto rounded-full bg-[#A9444C] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-white">Super Deals</span>
                 </Link>
                 <a href="https://wa.me/+2348024015795" target="_blank" rel="noreferrer" onClick={() => dispatch(toggleMobileMenu(false))} className="mt-4 flex items-center justify-center rounded-full bg-[#A87F3D] px-6 py-3 text-base text-white">Chat On WhatsApp</a>
               </div>
