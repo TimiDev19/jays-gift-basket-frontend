@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "@/store/audophileSlice";
 import { Link } from "react-router-dom";
 import Footer from "@/components/Footer";
+import { excludeBridalProducts } from "@/lib/products";
 
 type Product = {
   _id: string;
@@ -14,6 +15,7 @@ type Product = {
   description: string;
   avatar: string;
   cloudinary_id: string;
+  category?: string;
 };
 
 const Shop = () => {
@@ -34,9 +36,10 @@ const Shop = () => {
 
         console.log("Fetched data:", data);
 
-        setProducts(
-          Array.isArray(data) ? data.sort((a, b) => a.price - b.price) : []
+        const products = excludeBridalProducts(
+          Array.isArray(data) ? data : []
         );
+        setProducts(products.sort((a, b) => a.price - b.price));
 
         setIsLoading(false);
       } catch (error) {

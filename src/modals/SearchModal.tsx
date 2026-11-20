@@ -3,6 +3,7 @@ import { RootState } from "@/store/store";
 import { closeSearch, setQuery } from "@/store/searchSlice";
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
+import { excludeBridalProducts } from "@/lib/products";
 
 type Product = {
   _id: string;
@@ -10,6 +11,7 @@ type Product = {
   price: number;
   description: string;
   avatar: string;
+  category?: string;
 };
 
 export default function SearchModal() {
@@ -50,7 +52,9 @@ export default function SearchModal() {
 
           const data = await res.json();
 
-          const list = Array.isArray(data) ? data : [];
+          const list = excludeBridalProducts(
+            Array.isArray(data) ? data : []
+          );
 
           // ✅ RANKING LOGIC (MOST IMPORTANT FIX)
           const q = query.toLowerCase().trim();

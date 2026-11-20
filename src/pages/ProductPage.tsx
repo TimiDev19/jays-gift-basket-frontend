@@ -10,6 +10,7 @@ import {
   ShoppingBag01Icon,
 } from "hugeicons-react";
 import Footer from "@/components/Footer";
+import { excludeBridalProducts } from "@/lib/products";
 
 type Product = {
   _id: string;
@@ -18,6 +19,7 @@ type Product = {
   description: string;
   avatar: string;
   cloudinary_id: string;
+  category?: string;
 };
 
 const ProductPage: React.FC = () => {
@@ -38,7 +40,9 @@ const ProductPage: React.FC = () => {
         );
         const data = await res.json();
 
-        const productArray = Array.isArray(data) ? data : [];
+        const productArray = excludeBridalProducts(
+          Array.isArray(data) ? data : []
+        );
         setProducts(productArray);
       } catch (error) {
         console.error("Fetch error:", error);
@@ -57,7 +61,9 @@ const ProductPage: React.FC = () => {
         );
         const data = await res.json();
 
-        const productArray = Array.isArray(data) ? data : [];
+        const productArray = excludeBridalProducts(
+          Array.isArray(data) ? data : []
+        );
 
         // Shuffle products
         const shuffled = [...productArray].sort(() => 0.5 - Math.random());

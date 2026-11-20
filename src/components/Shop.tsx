@@ -5,6 +5,7 @@ import { ArrowRight01Icon, ShoppingBag01Icon } from "hugeicons-react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "@/store/audophileSlice";
 import { Link } from "react-router-dom";
+import { excludeBridalProducts } from "@/lib/products";
 
 type Product = {
   _id: string;
@@ -13,6 +14,7 @@ type Product = {
   description: string;
   avatar: string;
   cloudinary_id: string;
+  category?: string;
 };
 
 const Shop = () => {
@@ -32,7 +34,9 @@ const Shop = () => {
         );
         const data = await res.json();
 
-        const productArray = Array.isArray(data) ? data : [];
+        const productArray = excludeBridalProducts(
+          Array.isArray(data) ? data : []
+        );
 
         // Sort by price (cheapest → most expensive)
         const sortedByPrice = [...productArray].sort(
