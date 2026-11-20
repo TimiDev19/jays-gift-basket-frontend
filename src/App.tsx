@@ -36,6 +36,7 @@ import Valentines from "./pages/Valentines";
 import MothersDay from "./pages/MothersDay";
 import FathersDay from "./pages/FathersDay";
 import ChristmasPromo from "./pages/ChristmasPromo";
+import Zlatan from "./pages/Zlatan";
 
 function App() {
   return (
@@ -92,6 +93,14 @@ function App() {
             element={
               <FadeReveal>
                 <WeddingBaskets />
+              </FadeReveal>
+            }
+          />
+          <Route
+            path="/zlatan"
+            element={
+              <FadeReveal>
+                <Zlatan />
               </FadeReveal>
             }
           />

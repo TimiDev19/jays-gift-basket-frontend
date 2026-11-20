@@ -2,9 +2,11 @@ export type CategorizedProduct = {
   category?: string | null;
 };
 
-export const isBridalProduct = (product: CategorizedProduct): boolean =>
-  product.category?.trim().toLowerCase() === "bridal";
+const ERU_IYAWO_CATEGORIES = new Set(["bridal", "zlatan", "irw"]);
 
-export const excludeBridalProducts = <T extends CategorizedProduct>(
+export const isEruIyawoProduct = (product: CategorizedProduct): boolean =>
+  ERU_IYAWO_CATEGORIES.has(product.category?.trim().toLowerCase() ?? "");
+
+export const excludeEruIyawoProducts = <T extends CategorizedProduct>(
   products: T[]
-): T[] => products.filter((product) => !isBridalProduct(product));
+): T[] => products.filter((product) => !isEruIyawoProduct(product));

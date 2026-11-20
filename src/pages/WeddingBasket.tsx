@@ -1,7 +1,31 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { ArrowLeft01Icon, LinkBackwardIcon } from "hugeicons-react";
+import { ArrowUpRight, Heart, Sparkles } from "lucide-react";
 import Footer from "@/components/Footer";
+import coporate from "@/assets/coporate-gift.png";
+import couples from "@/assets/couples-gift.png";
+import picnic from "@/assets/picnic.png";
+import birthday from "@/assets/birthday-gift.png";
+
+const WEDDING_CATEGORIES = {
+  zlatan: {
+    title: "Zlatan's Wedding",
+    category: "zlatan",
+    subtitle: "A celebration made unforgettable",
+    tone: "from-[#351A27] via-[#6A354D] to-[#A87472]",
+    accent: "text-[#F3D9C8]",
+  },
+  irw: {
+    title: "Imperial Royale Wedding",
+    category: "irw",
+    subtitle: "An affair in timeless elegance",
+    tone: "from-[#302A21] via-[#716044] to-[#C4A878]",
+    accent: "text-[#F7E9C9]",
+  },
+} as const;
+
+type WeddingCategory = keyof typeof WEDDING_CATEGORIES;
 
 type Product = {
   _id: string;
@@ -11,113 +35,267 @@ type Product = {
 };
 
 const WeddingBaskets = () => {
+  const { weddingCategory } = useParams<{ weddingCategory?: string }>();
+  const selectedCategory =
+    weddingCategory && weddingCategory in WEDDING_CATEGORIES
+      ? WEDDING_CATEGORIES[weddingCategory as WeddingCategory]
+      : null;
   const [products, setProducts] = useState<Product[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [isFailed, setIsFailed] = useState(false);
 
   useEffect(() => {
+    if (!selectedCategory) {
+      setProducts([]);
+      setIsLoading(false);
+      setIsFailed(false);
+      return;
+    }
+
+    const controller = new AbortController();
     const fetchProducts = async () => {
       try {
+        setIsLoading(true);
+        setIsFailed(false);
         const response = await fetch(
-          "https://jays-gift-basket-backend.onrender.com/user"
+          "https://jays-gift-basket-backend.onrender.com/user",
+          { signal: controller.signal }
         );
-        if (!response.ok) throw new Error("Unable to load bridal gallery");
+        if (!response.ok) throw new Error("Unable to load wedding gallery");
 
         const data: unknown = await response.json();
         const productArray: Product[] = Array.isArray(data) ? data : [];
         setProducts(
           productArray.filter(
-            (product) => product.category?.trim().toLowerCase() === "bridal"
+            (product) =>
+              product.category?.trim().toLowerCase() ===
+              selectedCategory.category
           )
         );
       } catch (error) {
-        console.error("Bridal gallery fetch error:", error);
+        if (error instanceof Error && error.name === "AbortError") return;
+        console.error("Wedding gallery fetch error:", error);
         setProducts([]);
         setIsFailed(true);
       } finally {
-        setIsLoading(false);
+        if (!controller.signal.aborted) setIsLoading(false);
       }
     };
 
     fetchProducts();
-  }, []);
+    return () => controller.abort();
+  }, [selectedCategory]);
 
   const getWhatsAppInquiryUrl = (productName: string) => {
-    const message = `Hello, I'm interested in the ${productName} design from your Eru Iyawo gallery. I'd like to discuss a customised order.`;
+    const message = `Hello, I'm interested in the ${productName} design from the ${selectedCategory?.title} Eru Iyawo gallery. I'd like to discuss a customised order.`;
     return `https://wa.me/2348024015795?text=${encodeURIComponent(message)}`;
   };
 
   return (
     <>
-      <main className="min-h-[100dvh] bg-white pt-[150px]">
-        <div className="mb-5 w-full px-[2.5%]">
-          <div className="w-full px-[5%] lg:w-[548px]">
+      <div className="min-h-[100dvh] bg-white pt-[150px]">
+        {/* Gallery */}
+        <div className=" w-full min-h-[40vh] px-[2.5%] mb-[20px]">
+          <div className=" w-full lg:w-[548px] px-[5%]">
             <Link
-              to="/"
-              aria-label="Back to home"
-              className="mb-5 flex h-9 w-9 items-center justify-center rounded-full bg-[#A87F3D] lg:hidden"
+              to={"/"}
+              className=" flex items-center justify-center mb-[20px] h-[36px] w-[36px] bg-[#A87F3D] rounded-full lg:hidden"
             >
-              <ArrowLeft01Icon className="text-white" size={25} strokeWidth={1.5} />
+              <ArrowLeft01Icon
+                className=" text-white"
+                size={25}
+                strokeWidth={1.5}
+              />
             </Link>
             <Link
-              to="/"
-              className="mb-5 hidden h-12 w-[133px] items-center justify-center rounded-full bg-[#A87F3D] text-white sm:flex"
+              to={"/"}
+              className=" flex items-center justify-center mb-[20px] h-[48px] w-[133px] bg-[#A87F3D] rounded-full text-white max-sm:hidden"
             >
-              <LinkBackwardIcon className="mr-[5px] text-white" size={25} strokeWidth={1.5} />
+              <LinkBackwardIcon
+                className=" text-white mr-[5px]"
+                size={25}
+                strokeWidth={1.5}
+              />{" "}
               Back
             </Link>
           </div>
-
+          {/* Hero Section */}
           <section className="px-6 py-14 text-center">
-            <h1 className="text-4xl font-extrabold text-[#A87F3D] md:text-6xl">
+            <h1 className="text-4xl md:text-6xl font-extrabold text-[#A87F3D]">
               ERU IYAWO GALLERY
             </h1>
-            <p className="mx-auto mt-5 max-w-2xl text-base text-gray-600 md:text-lg">
-              Browse bridal gift inspiration. Tap a design to discuss a customised
-              order with us on WhatsApp.
+
+            <p className="max-w-2xl mx-auto mt-5 text-gray-600 text-base md:text-lg">
+              Browse bridal gift inspiration. Tap a design to discuss a
+              customised order with us on WhatsApp.
             </p>
           </section>
-
           {isLoading ? (
-            <div className="grid w-full grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
-              {Array.from({ length: 8 }).map((_, index) => (
-                <div
-                  key={index}
-                  className="aspect-[4/5] animate-pulse rounded-xl bg-[#A87F3D]/20"
-                />
-              ))}
+            <div className=" w-full grid grid-cols-2 lg:grid-cols-4">
+              <div className=" max-w-[40vw] lg:max-w-[20vw] bg-[#A87F3D]/50 animate-pulse mb-[10px]">
+                <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
+                  <Link to={`#`} className=" cursor-pointer">
+                    <div className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer bg-transparent"></div>
+                  </Link>
+                </div>
+
+                <div className=" w-full flex items-center justify-between">
+                  <div>
+                    <Link
+                      to={`#`}
+                      className=" text-[14px] lg:text-[16px] font-[500] text-transparent hover:underline duration-700 ease-in-out cursor-pointer"
+                    >
+                      product.name
+                    </Link>
+                    <h1 className=" text-transparent font-[600] text-[18px] lg:text-[28px]">
+                      ₦product.price
+                    </h1>
+                  </div>
+                </div>
+              </div>
+
+              <div className=" max-w-[40vw] lg:max-w-[20vw] bg-[#A87F3D]/50 animate-pulse">
+                <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
+                  <Link to={`#`} className=" cursor-pointer">
+                    <div className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer bg-transparent"></div>
+                  </Link>
+                </div>
+
+                <div className=" w-full flex items-center justify-between">
+                  <div>
+                    <Link
+                      to={`#`}
+                      className=" text-[14px] lg:text-[16px] font-[500] text-transparent hover:underline duration-700 ease-in-out cursor-pointer"
+                    >
+                      product.name
+                    </Link>
+                    <h1 className=" text-transparent font-[600] text-[18px] lg:text-[28px]">
+                      ₦product.price
+                    </h1>
+                  </div>
+
+                  {/* <div
+                    onClick={() => handleAddToCart(product)}
+                    className=" cursor-pointer h-[24px] lg:h-[42px] w-[24px] lg:w-[42px] bg-[#A87F3D] rounded-full flex items-center justify-center"
+                  >
+                    <ShoppingBag01Icon
+                      className=" text-[#EFF901]"
+                      size={22}
+                      strokeWidth={1.5}
+                    />
+                  </div> */}
+                </div>
+              </div>
+
+              <div className=" max-w-[40vw] lg:max-w-[20vw] bg-[#A87F3D]/50 animate-pulse">
+                <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
+                  <Link to={`#`} className=" cursor-pointer">
+                    <div className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer bg-transparent"></div>
+                  </Link>
+                </div>
+
+                <div className=" w-full flex items-center justify-between">
+                  <div>
+                    <Link
+                      to={`#`}
+                      className=" text-[14px] lg:text-[16px] font-[500] text-transparent hover:underline duration-700 ease-in-out cursor-pointer"
+                    >
+                      product.name
+                    </Link>
+                    <h1 className=" text-transparent font-[600] text-[18px] lg:text-[28px]">
+                      ₦product.price
+                    </h1>
+                  </div>
+
+                  {/* <div
+                    onClick={() => handleAddToCart(product)}
+                    className=" cursor-pointer h-[24px] lg:h-[42px] w-[24px] lg:w-[42px] bg-[#A87F3D] rounded-full flex items-center justify-center"
+                  >
+                    <ShoppingBag01Icon
+                      className=" text-[#EFF901]"
+                      size={22}
+                      strokeWidth={1.5}
+                    />
+                  </div> */}
+                </div>
+              </div>
+
+              <div className=" max-w-[40vw] lg:max-w-[20vw] bg-[#A87F3D]/50 animate-pulse">
+                <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
+                  <Link to={`#`} className=" cursor-pointer">
+                    <div className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer bg-transparent"></div>
+                  </Link>
+                </div>
+
+                <div className=" w-full flex items-center justify-between">
+                  <div>
+                    <Link
+                      to={`#`}
+                      className=" text-[14px] lg:text-[16px] font-[500] text-transparent hover:underline duration-700 ease-in-out cursor-pointer"
+                    >
+                      product.name
+                    </Link>
+                    <h1 className=" text-transparent font-[600] text-[18px] lg:text-[28px]">
+                      ₦product.price
+                    </h1>
+                  </div>
+                </div>
+              </div>
             </div>
-          ) : isFailed ? (
-            <p className="py-12 text-center text-gray-500">
-              We couldn’t load the bridal gallery. Please try again later.
-            </p>
-          ) : products.length === 0 ? (
-            <p className="py-12 text-center text-gray-500">
-              No bridal gifts are available right now. Please check back soon.
-            </p>
           ) : (
-            <div className="grid w-full grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
-              {products.map((product) => (
-                <a
-                  key={product._id}
-                  href={getWhatsAppInquiryUrl(product.name)}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={`Ask about the ${product.name} design on WhatsApp`}
-                  className="group block overflow-hidden rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#754558]"
-                >
-                  <img
-                    src={product.avatar}
-                    alt={product.name}
-                    loading="lazy"
-                    className="aspect-[4/5] w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </a>
-              ))}
-            </div>
+            <>
+              <div className=" w-full mx-auto grid grid-cols-2 lg:grid-cols-3">
+                <div className=" max-w-[40vw] lg:max-w-[20vw] mb-[20px]">
+                  <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
+                    <Link to={`/zlatan`} className=" cursor-pointer">
+                      <img
+                        src={couples}
+                        className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer rounded-xl"
+                      />
+                    </Link>
+                  </div>
+
+                  <div className=" w-full flex items-center justify-center">
+                    <div className=" w-full flex flex-col items-center justify-center">
+                      <Link
+                        to={`/zlatan`}
+                        className=" line-clamp-2 text-[#000000] text-[20px] mb-2"
+                      >
+                        Zlatan's Wedding
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+
+                <div className=" max-w-[40vw] lg:max-w-[20vw] mb-[20px]">
+                  <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
+                    <Link
+                      to={`/irw`}
+                      className=" cursor-pointer"
+                    >
+                      <img
+                        src={coporate}
+                        className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer rounded-xl"
+                      />
+                    </Link>
+                  </div>
+
+                  <div className=" w-full flex items-center justify-center">
+                    <div className=" w-full flex flex-col items-center justify-center">
+                      <Link
+                        to={`/irw`}
+                        className=" line-clamp-2 text-[#000000] text-[20px] mb-2 text-center"
+                      >
+                        Imperial Royale Wedding
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </>
           )}
         </div>
-      </main>
+      </div>
       <Footer />
     </>
   );

@@ -10,7 +10,7 @@ import {
   ShoppingBag01Icon,
 } from "hugeicons-react";
 import Footer from "@/components/Footer";
-import { excludeBridalProducts } from "@/lib/products";
+import { excludeEruIyawoProducts } from "@/lib/products";
 
 type Product = {
   _id: string;
@@ -40,7 +40,7 @@ const ProductPage: React.FC = () => {
         );
         const data = await res.json();
 
-        const productArray = excludeBridalProducts(
+        const productArray = excludeEruIyawoProducts(
           Array.isArray(data) ? data : []
         );
         setProducts(productArray);
@@ -61,7 +61,7 @@ const ProductPage: React.FC = () => {
         );
         const data = await res.json();
 
-        const productArray = excludeBridalProducts(
+        const productArray = excludeEruIyawoProducts(
           Array.isArray(data) ? data : []
         );
 

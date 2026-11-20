@@ -5,7 +5,7 @@ import { ArrowRight01Icon, ShoppingBag01Icon } from "hugeicons-react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "@/store/audophileSlice";
 import { Link } from "react-router-dom";
-import { excludeBridalProducts } from "@/lib/products";
+import { excludeEruIyawoProducts } from "@/lib/products";
 
 type Product = {
   _id: string;
@@ -34,7 +34,7 @@ const Shop = () => {
         );
         const data = await res.json();
 
-        const productArray = excludeBridalProducts(
+        const productArray = excludeEruIyawoProducts(
           Array.isArray(data) ? data : []
         );
 

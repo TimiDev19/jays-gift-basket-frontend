@@ -3,7 +3,7 @@ import { RootState } from "@/store/store";
 import { closeSearch, setQuery } from "@/store/searchSlice";
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import { excludeBridalProducts } from "@/lib/products";
+import { excludeEruIyawoProducts } from "@/lib/products";
 
 type Product = {
   _id: string;
@@ -52,7 +52,7 @@ export default function SearchModal() {
 
           const data = await res.json();
 
-          const list = excludeBridalProducts(
+          const list = excludeEruIyawoProducts(
             Array.isArray(data) ? data : []
           );
 
