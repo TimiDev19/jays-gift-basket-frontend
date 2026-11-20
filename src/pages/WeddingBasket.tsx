@@ -3,8 +3,8 @@ import { Link, useParams } from "react-router-dom";
 import { ArrowLeft01Icon, LinkBackwardIcon } from "hugeicons-react";
 import { ArrowUpRight, Heart, Sparkles } from "lucide-react";
 import Footer from "@/components/Footer";
-import coporate from "@/assets/coporate-gift.png";
-import couples from "@/assets/couples-gift.png";
+import coporate from "@/assets/irw.jpg";
+import couples from "@/assets/zlatan.jpg";
 import picnic from "@/assets/picnic.png";
 import birthday from "@/assets/birthday-gift.png";
 
