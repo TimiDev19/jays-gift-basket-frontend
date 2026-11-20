@@ -261,7 +261,7 @@ const WeddingBaskets = () => {
                         to={`/zlatan`}
                         className=" line-clamp-2 text-[#000000] text-[20px] mb-2"
                       >
-                        Zlatan's Wedding
+                        Zlatan'26
                       </Link>
                     </div>
                   </div>
