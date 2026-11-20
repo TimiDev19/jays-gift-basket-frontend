@@ -55,7 +55,7 @@ const ShopByOccasion = () => {
         <div className=" w-full grid grid-cols-2 lg:grid-cols-4">
           <div className=" max-w-[40vw] lg:max-w-[20vw] mb-[20px]">
             <div className="w-[172px] lg:w-[286px] h-[192px] lg:h-[320px] cursor-pointer overflow-hidden mb-[10px]">
-              <Link to={`/christmas`} className=" cursor-pointer">
+              <Link to={`/christmas_promo`} className=" cursor-pointer">
                 <img
                   src={christmas}
                   className="w-full h-full object-cover hover:h-[110%] duration-500 cursor-pointer rounded-xl"
