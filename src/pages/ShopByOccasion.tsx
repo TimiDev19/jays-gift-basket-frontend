@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import birthday from "@/assets/birthday-gift.png";
 import wedding from "@/assets/wedding-gift.png";
 import coporate from "@/assets/coporate-gift.png";
-import couples from "@/assets/couples-gift.png";
+import couples from "@/assets/valentines.jpg";
 import christmas from "@/assets/christmas.jpeg";
 import new_year from "@/assets/new-year.jpeg";
 import mothersday from "@/assets/mothersday.jpeg";
